@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Hesap Makinesi</string>
+    <string name="back_text">Geri</string>
+    <string name="settings_text">Ayarlar</string>
+    <string name="close_app_text">Uygulamayı Kapat</string>
+    <string name="del_text">SİL</string>
+    <string name="menu_text">Menü</string>
+    <string name="history_text">Geçmiş</string>
+    <string name="update_download_failed">Hata! Güncelleme yüklemesi başarısız.</string>
+    <string name="update_install_completed">Güncelleme yüklemesi başarılı!</string>
+    <string name="update_new_version_available">Yeni Sürüm Bulundu!</string>
+    <string name="install_text">Yükle</string>
+    <string name="cancel_text">İptal</string>
+    <string name="yes_text">Evet</string>
+    <string name="no_text">Hayır</string>
+    <string name="delete_text">Sil</string>
+    <string name="about_summary">Uygulama bilgilerini göster.</string>
+    <string name="about_text">Hakkında</string>
+    <string name="version_text">Sürüm</string>
+    <string name="no_history_title">Geçmiş boş.</string>
+    <string name="no_history_summary">Geçmişi görmek için işlem yapın.</string>
+    <string name="select_theme_text">Tema Seç</string>
+    <string name="select_theme_summary">Bir hesap makinesi görünümü seçin.</string>
+    <string name="settings_category_general">Genel</string>
+    <string name="settings_category_appearance">Görünüm</string>
+    <string name="light_theme_text">Aydınlık Tema</string>
+    <string name="dark_theme_text">Koyu Tema</string>
+    <string name="settings_category_other">Diğer</string>
+    <string name="contact_text">İletişim</string>
+    <string name="open_page_text">Sayfayı Aç</string>
+    <string name="web_page_text">Web Sayfası</string>
+</resources>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.HistoryActivity">
+    <!-- Toolbar !-->
+    <include
+        layout="@layout/toolbar_settings"/>
+    <!-- History Content !-->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <!-- No History Layout !-->
+        <LinearLayout
+            android:id="@+id/noHistoryLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+            <!-- Image !-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="105dp"
+                    android:layout_height="105dp"
+                    android:layout_weight="0.2"
+                    app:srcCompat="@drawable/ic_baseline_history_24"/>
+            </LinearLayout>
+            <!-- Title !-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="25sp"
+                android:textAlignment="center"
+                android:text="@string/no_history_title" />
+            <!-- Summary !-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textAlignment="center"
+                android:text="@string/no_history_summary" />
+        </LinearLayout>
+        <!-- History List View !-->
+        <ListView
+            android:id="@+id/historyListView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@color/transparent"/>
+    </FrameLayout>
+
+</LinearLayout>

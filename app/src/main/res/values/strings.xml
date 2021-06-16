@@ -1,0 +1,33 @@
+<resources>
+    <string name="startapp_app_id" translatable="false">209206067</string>
+    <string name="app_name">Calculator</string>
+    <string name="back_text">Back</string>
+    <string name="settings_text">Settings</string>
+    <string name="close_app_text">Close App</string>
+    <string name="del_text">DEL</string>
+    <string name="menu_text">Menu</string>
+    <string name="history_text">History</string>
+    <string name="update_download_failed">Error! Update download failed.</string>
+    <string name="update_install_completed">Update install completed!</string>
+    <string name="update_new_version_available">New Version Available!</string>
+    <string name="install_text">Install</string>
+    <string name="cancel_text">Cancel</string>
+    <string name="settings_category_general">General</string>
+    <string name="settings_category_appearance">Appearance</string>
+    <string name="select_theme_text">Select Theme</string>
+    <string name="select_theme_summary">Select a calculator theme.</string>
+    <string name="yes_text">Yes</string>
+    <string name="no_text">No</string>
+    <string name="delete_text">Delete</string>
+    <string name="about_text">About</string>
+    <string name="no_history_title">History is empty.</string>
+    <string name="no_history_summary">Take process for see history.</string>
+    <string name="about_summary">Show application infos.</string>
+    <string name="version_text">Version</string>
+    <string name="light_theme_text">Light Theme</string>
+    <string name="dark_theme_text">Dark Theme</string>
+    <string name="settings_category_other">Other</string>
+    <string name="contact_text">Contact</string>
+    <string name="open_page_text">Open Page</string>
+    <string name="web_page_text">Web Page</string>
+</resources>

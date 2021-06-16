@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/calcDrawerMenu"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.MainActivity">
+    <!-- Content Main !-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <!-- Calculator Toolbar !-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:orientation="horizontal">
+            <!-- Settings Button !-->
+            <ImageButton
+                android:id="@+id/openMenuButton"
+                android:layout_width="55dp"
+                android:layout_height="match_parent"
+                android:background="?attr/actionBarItemBackground"
+                android:src="@drawable/ic_baseline_menu_24"
+                android:tooltipText="@string/menu_text"/>
+            <!-- Toolbar Right Menu !-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="end"
+                android:orientation="horizontal">
+                <!-- Close Button !-->
+                <ImageButton
+                    android:id="@+id/closeAppButton"
+                    android:layout_width="55dp"
+                    android:layout_height="match_parent"
+                    android:background="?attr/actionBarItemBackground"
+                    android:src="@drawable/ic_baseline_close_24"
+                    android:tooltipText="@string/close_app_text"/>
+            </LinearLayout>
+        </LinearLayout>
+        <!-- Calculator Show Process and Value !-->
+        <LinearLayout
+            android:id="@+id/inputFocusLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
+            <!-- Process Text View !-->
+            <EditText
+                android:id="@+id/calcShowProcess"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:paddingEnd="10dp"
+                android:paddingStart="10dp"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:clickable="false"
+                android:singleLine="true"
+                android:fontFamily="sans-serif-light"
+                android:textAlignment="textEnd"
+                android:textSize="22sp"/>
+            <!-- Values Text View !-->
+            <EditText
+                android:id="@+id/calcShowValue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:padding="10dp"
+                android:singleLine="true"
+                android:fontFamily="sans-serif-light"
+                android:textAlignment="textEnd"
+                android:textSize="34sp"/>
+        </LinearLayout>
+        <!-- Calculator Buttons Pager !-->
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/calcButtonPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"/>
+        <!-- ADS !-->
+        <com.startapp.sdk.ads.banner.Banner
+            android:id="@+id/startAppBanner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <!-- Drawer Menu !-->
+    <LinearLayout
+        android:id="@+id/calcDrawerMenuLayout"
+        android:layout_width="250dp"
+        android:layout_height="match_parent"
+        android:background="?android:attr/windowBackground"
+        android:orientation="vertical"
+        android:layout_gravity="start">
+        <!-- Menu Toolbar !-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:orientation="horizontal">
+            <!-- Menu Title !-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingStart="10dp"
+                android:gravity="center_vertical"
+                android:textSize="24sp"
+                android:text="@string/menu_text"/>
+        </LinearLayout>
+        <!-- Divider !-->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider" />
+        <!-- Menu Content !-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <!-- Settings Button !-->
+            <Button
+                android:id="@+id/settingsButton"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start|center_vertical"
+                android:paddingStart="10dp"
+                android:text="@string/settings_text"
+                android:textAllCaps="false"
+                app:icon="@drawable/ic_baseline_settings_24"/>
+            <!-- History Button !-->
+            <Button
+                android:id="@+id/historyButton"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start|center_vertical"
+                android:paddingStart="10dp"
+                android:text="@string/history_text"
+                android:textAllCaps="false"
+                app:icon="@drawable/ic_baseline_history_24"/>
+            <!-- Divider !-->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.drawerlayout.widget.DrawerLayout>

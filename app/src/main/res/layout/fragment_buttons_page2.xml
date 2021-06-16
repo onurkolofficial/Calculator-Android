@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.calculator.ButtonsPage2Fragment">
+    <!-- Scroll Page 2 !-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <!-- Button Line 1 !-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <!-- Log Button !-->
+                <Button
+                    android:id="@+id/logButton"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:layout_marginEnd="18dp"
+                    android:textSize="20sp"
+                    android:text="LOG" />
+                <!-- Cot Button !-->
+                <Button
+                    android:id="@+id/cotButton"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:layout_marginEnd="18dp"
+                    android:layout_toEndOf="@id/logButton"
+                    android:text="COT"
+                    android:textSize="20sp" />
+                <!-- Deg Button !-->
+                <Button
+                    android:id="@+id/degButton"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:layout_marginEnd="18dp"
+                    android:layout_toEndOf="@id/cotButton"
+                    android:textSize="20sp"
+                    android:text="DEG" />
+                <!-- Rad Button !-->
+                <Button
+                    android:id="@+id/radButton"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_toEndOf="@id/degButton"
+                    android:textSize="20sp"
+                    android:text="RAD" />
+            </RelativeLayout>
+        </LinearLayout>
+        <!-- Button Line 2 !-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <!-- Abs Button !-->
+                <Button
+                    android:id="@+id/absButton"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:layout_marginEnd="18dp"
+                    android:textSize="20sp"
+                    android:text="ABS" />
+                <!-- Sin Button !-->
+                <Button
+                    android:id="@+id/sinButton"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:layout_marginEnd="18dp"
+                    android:layout_toEndOf="@id/absButton"
+                    android:textSize="20sp"
+                    android:text="SIN" />
+                <!-- Cos Button !-->
+                <Button
+                    android:id="@+id/cosButton"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:layout_marginEnd="18dp"
+                    android:layout_toEndOf="@id/sinButton"
+                    android:textSize="20sp"
+                    android:text="COS" />
+                <!-- Tan Button !-->
+                <Button
+                    android:id="@+id/tanButton"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_toEndOf="@id/cosButton"
+                    android:textSize="20sp"
+                    android:text="TAN" />
+            </RelativeLayout>
+        </LinearLayout>
+        <!-- Button Line 3 !-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <!-- Pi Button !-->
+                <Button
+                    android:id="@+id/piButton"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:layout_marginEnd="18dp"
+                    android:textSize="20sp"
+                    android:textAllCaps="false"
+                    android:text="&#960;" />
+                <!-- E Button !-->
+                <Button
+                    android:id="@+id/eButton"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:layout_marginEnd="18dp"
+                    android:layout_toEndOf="@id/piButton"
+                    android:textSize="20sp"
+                    android:textAllCaps="false"
+                    android:text="e" />
+                <!-- Fact Button !-->
+                <Button
+                    android:id="@+id/factButton"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:layout_marginEnd="18dp"
+                    android:layout_toEndOf="@id/eButton"
+                    android:textSize="20sp"
+                    android:textAllCaps="false"
+                    android:text="n!" />
+                <!-- Power Button !-->
+                <Button
+                    android:id="@+id/powerButton"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="82dp"
+                    android:layout_height="100dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_toEndOf="@id/factButton"
+                    android:textSize="20sp"
+                    android:textAllCaps="false"
+                    android:text="x&#696;" />
+            </RelativeLayout>
+        </LinearLayout>
+        <!-- Button Line 4 !-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <!-- Sqrt Button !-->
+                <Button
+                    android:id="@+id/sqrtButton"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:layout_marginEnd="18dp"
+                    android:textSize="20sp"
+                    android:text="&#8730;" />
+                <!-- Floor Button !-->
+                <Button
+                    android:id="@+id/lnButton"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:layout_marginEnd="18dp"
+                    android:layout_toEndOf="@id/sqrtButton"
+                    android:textSize="20sp"
+                    android:text="LN" />
+                <!-- Bracket On Button !-->
+                <Button
+                    android:id="@+id/brackOnButton"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:layout_marginEnd="18dp"
+                    android:layout_toEndOf="@id/lnButton"
+                    android:textSize="20sp"
+                    android:text="(" />
+                <!-- Bracket On Button !-->
+                <Button
+                    android:id="@+id/brackOffButton"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_toEndOf="@id/brackOnButton"
+                    android:textSize="20sp"
+                    android:text=")" />
+
+            </RelativeLayout>
+        </LinearLayout>
+
+        <!-- Button Line 5 !-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <!-- Sinh Button !-->
+                <Button
+                    android:id="@+id/sinhButton"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="82dp"
+                    android:layout_height="100dp"
+                    android:layout_marginEnd="18dp"
+                    android:textSize="20sp"
+                    android:text="SINH" />
+                <!-- ASin Button !-->
+                <Button
+                    android:id="@+id/asinButton"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="82dp"
+                    android:layout_height="100dp"
+                    android:layout_marginEnd="18dp"
+                    android:layout_toEndOf="@id/sinhButton"
+                    android:textSize="20sp"
+                    android:text="ASIN" />
+                <!-- ACos Button !-->
+                <Button
+                    android:id="@+id/acosButton"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:layout_marginEnd="18dp"
+                    android:layout_toEndOf="@id/asinButton"
+                    android:textSize="20sp"
+                    android:text="ACOS" />
+                <!-- Tan Button !-->
+                <Button
+                    android:id="@+id/atanButton"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_toEndOf="@id/acosButton"
+                    android:textSize="20sp"
+                    android:text="ATAN" />
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>
