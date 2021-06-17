@@ -9,8 +9,8 @@ android {
         applicationId "com.onurkol.app.calculator"
         minSdkVersion 23
         targetSdkVersion 30
-        versionCode 23
-        versionName "2.5.0"
+        versionCode 24
+        versionName "2.5.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

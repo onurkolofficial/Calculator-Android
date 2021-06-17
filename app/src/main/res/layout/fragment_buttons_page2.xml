@@ -24,7 +24,7 @@
                     style="@style/Widget.AppCompat.Button.Borderless"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
-                    android:layout_marginEnd="18dp"
+                    android:layout_marginEnd="20dp"
                     android:textSize="20sp"
                     android:text="LOG" />
                 <!-- Cot Button !-->
@@ -33,7 +33,7 @@
                     style="@style/Widget.AppCompat.Button.Borderless"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
-                    android:layout_marginEnd="18dp"
+                    android:layout_marginEnd="20dp"
                     android:layout_toEndOf="@id/logButton"
                     android:text="COT"
                     android:textSize="20sp" />
@@ -43,7 +43,7 @@
                     style="@style/Widget.AppCompat.Button.Borderless"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
-                    android:layout_marginEnd="18dp"
+                    android:layout_marginEnd="20dp"
                     android:layout_toEndOf="@id/cotButton"
                     android:textSize="20sp"
                     android:text="DEG" />
@@ -74,7 +74,7 @@
                     style="@style/Widget.AppCompat.Button.Borderless"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
-                    android:layout_marginEnd="18dp"
+                    android:layout_marginEnd="20dp"
                     android:textSize="20sp"
                     android:text="ABS" />
                 <!-- Sin Button !-->
@@ -83,7 +83,7 @@
                     style="@style/Widget.AppCompat.Button.Borderless"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
-                    android:layout_marginEnd="18dp"
+                    android:layout_marginEnd="20dp"
                     android:layout_toEndOf="@id/absButton"
                     android:textSize="20sp"
                     android:text="SIN" />
@@ -93,7 +93,7 @@
                     style="@style/Widget.AppCompat.Button.Borderless"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
-                    android:layout_marginEnd="18dp"
+                    android:layout_marginEnd="20dp"
                     android:layout_toEndOf="@id/sinButton"
                     android:textSize="20sp"
                     android:text="COS" />
@@ -124,7 +124,7 @@
                     style="@style/Widget.AppCompat.Button.Borderless"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
-                    android:layout_marginEnd="18dp"
+                    android:layout_marginEnd="20dp"
                     android:textSize="20sp"
                     android:textAllCaps="false"
                     android:text="&#960;" />
@@ -134,7 +134,7 @@
                     style="@style/Widget.AppCompat.Button.Borderless"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
-                    android:layout_marginEnd="18dp"
+                    android:layout_marginEnd="20dp"
                     android:layout_toEndOf="@id/piButton"
                     android:textSize="20sp"
                     android:textAllCaps="false"
@@ -145,7 +145,7 @@
                     style="@style/Widget.AppCompat.Button.Borderless"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
-                    android:layout_marginEnd="18dp"
+                    android:layout_marginEnd="20dp"
                     android:layout_toEndOf="@id/eButton"
                     android:textSize="20sp"
                     android:textAllCaps="false"
@@ -178,7 +178,7 @@
                     style="@style/Widget.AppCompat.Button.Borderless"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
-                    android:layout_marginEnd="18dp"
+                    android:layout_marginEnd="20dp"
                     android:textSize="20sp"
                     android:text="&#8730;" />
                 <!-- Floor Button !-->
@@ -187,7 +187,7 @@
                     style="@style/Widget.AppCompat.Button.Borderless"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
-                    android:layout_marginEnd="18dp"
+                    android:layout_marginEnd="20dp"
                     android:layout_toEndOf="@id/sqrtButton"
                     android:textSize="20sp"
                     android:text="LN" />
@@ -197,7 +197,7 @@
                     style="@style/Widget.AppCompat.Button.Borderless"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
-                    android:layout_marginEnd="18dp"
+                    android:layout_marginEnd="20dp"
                     android:layout_toEndOf="@id/lnButton"
                     android:textSize="20sp"
                     android:text="(" />
@@ -228,18 +228,18 @@
                 <Button
                     android:id="@+id/sinhButton"
                     style="@style/Widget.AppCompat.Button.Borderless"
-                    android:layout_width="82dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="100dp"
-                    android:layout_marginEnd="18dp"
+                    android:layout_marginEnd="20dp"
                     android:textSize="20sp"
                     android:text="SINH" />
                 <!-- ASin Button !-->
                 <Button
                     android:id="@+id/asinButton"
                     style="@style/Widget.AppCompat.Button.Borderless"
-                    android:layout_width="82dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="100dp"
-                    android:layout_marginEnd="18dp"
+                    android:layout_marginEnd="20dp"
                     android:layout_toEndOf="@id/sinhButton"
                     android:textSize="20sp"
                     android:text="ASIN" />
@@ -249,7 +249,7 @@
                     style="@style/Widget.AppCompat.Button.Borderless"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
-                    android:layout_marginEnd="18dp"
+                    android:layout_marginEnd="20dp"
                     android:layout_toEndOf="@id/asinButton"
                     android:textSize="20sp"
                     android:text="ACOS" />

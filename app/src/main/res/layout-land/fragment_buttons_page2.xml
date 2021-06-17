@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.calculator.ButtonsPage1Fragment">
-    <!-- Scroll Page 1 !-->
+    tools:context=".fragments.calculator.ButtonsPage2Fragment">
+    <!-- Scroll Page 2 !-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -18,45 +18,42 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
-                <!-- Negative/Positive Button !-->
+                <!-- Log Button !-->
                 <Button
-                    android:id="@+id/negPosButton"
+                    android:id="@+id/logButton"
                     style="@style/Widget.AppCompat.Button.Borderless"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
-                    android:layout_marginEnd="20dp"
-                    android:textSize="24sp"
-                    android:text="-/+" />
-                <!-- Percent Button !-->
+                    android:text="LOG"
+                    android:textSize="18sp" />
+                <!-- Cot Button !-->
                 <Button
-                    android:id="@+id/percentButton"
+                    android:id="@+id/cotButton"
                     style="@style/Widget.AppCompat.Button.Borderless"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
-                    android:layout_marginEnd="20dp"
-                    android:layout_toEndOf="@id/negPosButton"
-                    android:textSize="24sp"
-                    android:text="%" />
-                <!-- Clear Button !-->
+                    android:layout_toEndOf="@id/logButton"
+                    android:text="COT"
+                    android:textSize="18sp" />
+                <!-- Deg Button !-->
                 <Button
-                    android:id="@+id/clearButton"
+                    android:id="@+id/degButton"
                     style="@style/Widget.AppCompat.Button.Borderless"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
-                    android:layout_marginEnd="20dp"
-                    android:layout_toEndOf="@id/percentButton"
-                    android:textSize="24sp"
-                    android:text="C" />
-                <!-- Delete Button !-->
+                    android:layout_toEndOf="@id/cotButton"
+                    android:text="DEG"
+                    android:textSize="18sp" />
+                <!-- Rad Button !-->
                 <Button
-                    android:id="@+id/deleteButton"
+                    android:id="@+id/radButton"
                     style="@style/Widget.AppCompat.Button.Borderless"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
                     android:layout_alignParentEnd="true"
-                    android:layout_toEndOf="@id/clearButton"
-                    android:textSize="24sp"
-                    android:text="@string/del_text" />
+                    android:layout_toEndOf="@id/degButton"
+                    android:textSize="18sp"
+                    android:text="RAD" />
             </RelativeLayout>
         </LinearLayout>
         <!-- Button Line 2 !-->
@@ -68,45 +65,42 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
-                <!-- 7 Button !-->
+                <!-- Abs Button !-->
                 <Button
-                    android:id="@+id/calc7Button"
+                    android:id="@+id/absButton"
                     style="@style/Widget.AppCompat.Button.Borderless"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
-                    android:layout_marginEnd="20dp"
-                    android:textSize="24sp"
-                    android:text="7" />
-                <!-- 8 Button !-->
+                    android:text="ABS"
+                    android:textSize="18sp" />
+                <!-- Sin Button !-->
                 <Button
-                    android:id="@+id/calc8Button"
+                    android:id="@+id/sinButton"
                     style="@style/Widget.AppCompat.Button.Borderless"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
-                    android:layout_marginEnd="20dp"
-                    android:layout_toEndOf="@id/calc7Button"
-                    android:textSize="24sp"
-                    android:text="8" />
-                <!-- 9 Button !-->
+                    android:layout_toEndOf="@id/absButton"
+                    android:text="SIN"
+                    android:textSize="18sp" />
+                <!-- Cos Button !-->
                 <Button
-                    android:id="@+id/calc9Button"
+                    android:id="@+id/cosButton"
                     style="@style/Widget.AppCompat.Button.Borderless"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
-                    android:layout_marginEnd="20dp"
-                    android:layout_toEndOf="@id/calc8Button"
-                    android:textSize="24sp"
-                    android:text="9" />
-                <!-- Division Button !-->
+                    android:layout_toEndOf="@id/sinButton"
+                    android:text="COS"
+                    android:textSize="18sp" />
+                <!-- Tan Button !-->
                 <Button
-                    android:id="@+id/divisionButton"
+                    android:id="@+id/tanButton"
                     style="@style/Widget.AppCompat.Button.Borderless"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
                     android:layout_alignParentEnd="true"
-                    android:layout_toEndOf="@id/calc9Button"
-                    android:textSize="24sp"
-                    android:text="/" />
+                    android:layout_toEndOf="@id/cosButton"
+                    android:textSize="18sp"
+                    android:text="TAN" />
             </RelativeLayout>
         </LinearLayout>
         <!-- Button Line 3 !-->
@@ -118,46 +112,46 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
-                <!-- 4 Button !-->
+                <!-- Pi Button !-->
                 <Button
-                    android:id="@+id/calc4Button"
+                    android:id="@+id/piButton"
                     style="@style/Widget.AppCompat.Button.Borderless"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
-                    android:layout_marginEnd="20dp"
-                    android:textSize="24sp"
-                    android:text="4" />
-                <!-- 5 Button !-->
+                    android:text="&#960;"
+                    android:textAllCaps="false"
+                    android:textSize="18sp" />
+                <!-- E Button !-->
                 <Button
-                    android:id="@+id/calc5Button"
+                    android:id="@+id/eButton"
                     style="@style/Widget.AppCompat.Button.Borderless"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
-                    android:layout_marginEnd="20dp"
-                    android:layout_toEndOf="@id/calc4Button"
-                    android:textSize="24sp"
-                    android:text="5" />
-                <!-- 6 Button !-->
+                    android:layout_toEndOf="@id/piButton"
+                    android:text="e"
+                    android:textAllCaps="false"
+                    android:textSize="18sp" />
+                <!-- Fact Button !-->
                 <Button
-                    android:id="@+id/calc6Button"
+                    android:id="@+id/factButton"
                     style="@style/Widget.AppCompat.Button.Borderless"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
-                    android:layout_marginEnd="20dp"
-                    android:layout_toEndOf="@id/calc5Button"
-                    android:textSize="24sp"
-                    android:text="6" />
-                <!-- Multiple Button !-->
+                    android:layout_toEndOf="@id/eButton"
+                    android:text="n!"
+                    android:textAllCaps="false"
+                    android:textSize="18sp" />
+                <!-- Power Button !-->
                 <Button
-                    android:id="@+id/multipleButton"
+                    android:id="@+id/powerButton"
                     style="@style/Widget.AppCompat.Button.Borderless"
-                    android:layout_width="wrap_content"
+                    android:layout_width="82dp"
                     android:layout_height="100dp"
                     android:layout_alignParentEnd="true"
-                    android:layout_toEndOf="@id/calc6Button"
-                    android:textSize="24sp"
+                    android:layout_toEndOf="@id/factButton"
+                    android:textSize="18sp"
                     android:textAllCaps="false"
-                    android:text="x" />
+                    android:text="x&#696;" />
             </RelativeLayout>
         </LinearLayout>
         <!-- Button Line 4 !-->
@@ -169,47 +163,46 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
-                <!-- 1 Button !-->
+                <!-- Sqrt Button !-->
                 <Button
-                    android:id="@+id/calc1Button"
+                    android:id="@+id/sqrtButton"
                     style="@style/Widget.AppCompat.Button.Borderless"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
-                    android:layout_marginEnd="20dp"
-                    android:textSize="24sp"
-                    android:text="1" />
-                <!-- 2 Button !-->
+                    android:text="&#8730;"
+                    android:textSize="18sp" />
+                <!-- Floor Button !-->
                 <Button
-                    android:id="@+id/calc2Button"
+                    android:id="@+id/lnButton"
                     style="@style/Widget.AppCompat.Button.Borderless"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
-                    android:layout_marginEnd="20dp"
-                    android:layout_toEndOf="@id/calc1Button"
-                    android:textSize="24sp"
-                    android:text="2" />
-                <!-- 3 Button !-->
+                    android:layout_toEndOf="@id/sqrtButton"
+                    android:text="LN"
+                    android:textSize="18sp" />
+                <!-- Bracket On Button !-->
                 <Button
-                    android:id="@+id/calc3Button"
+                    android:id="@+id/brackOnButton"
                     style="@style/Widget.AppCompat.Button.Borderless"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
-                    android:layout_marginEnd="20dp"
-                    android:layout_toEndOf="@id/calc2Button"
-                    android:textSize="24sp"
-                    android:text="3" />
-                <!-- Extraction Button !-->
+                    android:layout_toEndOf="@id/lnButton"
+                    android:text="("
+                    android:textSize="18sp" />
+                <!-- Bracket On Button !-->
                 <Button
-                    android:id="@+id/extractionButton"
+                    android:id="@+id/brackOffButton"
                     style="@style/Widget.AppCompat.Button.Borderless"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
                     android:layout_alignParentEnd="true"
-                    android:layout_toEndOf="@id/calc3Button"
-                    android:textSize="24sp"
-                    android:text="-" />
+                    android:layout_toEndOf="@id/brackOnButton"
+                    android:textSize="18sp"
+                    android:text=")" />
+
             </RelativeLayout>
         </LinearLayout>
+
         <!-- Button Line 5 !-->
         <LinearLayout
             android:layout_width="match_parent"
@@ -219,47 +212,43 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
-                <!-- Colon Button !-->
+                <!-- Sinh Button !-->
                 <Button
-                    android:id="@+id/colonButton"
+                    android:id="@+id/sinhButton"
                     style="@style/Widget.AppCompat.Button.Borderless"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
-                    android:layout_marginEnd="20dp"
-                    android:textSize="24sp"
-                    android:textStyle="bold"
-                    android:text="." />
-                <!-- 0 Button !-->
+                    android:text="SINH"
+                    android:textSize="18sp" />
+                <!-- ASin Button !-->
                 <Button
-                    android:id="@+id/calc0Button"
+                    android:id="@+id/asinButton"
                     style="@style/Widget.AppCompat.Button.Borderless"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
-                    android:layout_marginEnd="20dp"
-                    android:layout_toEndOf="@id/colonButton"
-                    android:textSize="24sp"
-                    android:text="0" />
-                <!-- Equal Button !-->
+                    android:layout_toEndOf="@id/sinhButton"
+                    android:text="ASIN"
+                    android:textSize="18sp" />
+                <!-- ACos Button !-->
                 <Button
-                    android:id="@+id/equalButton"
+                    android:id="@+id/acosButton"
                     style="@style/Widget.AppCompat.Button.Borderless"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
-                    android:layout_marginEnd="20dp"
-                    android:layout_toEndOf="@id/calc0Button"
-                    android:textSize="24sp"
-                    android:text="=" />
-                <!-- Addition Button !-->
+                    android:layout_toEndOf="@id/asinButton"
+                    android:text="ACOS"
+                    android:textSize="18sp" />
+                <!-- Tan Button !-->
                 <Button
-                    android:id="@+id/additionButton"
+                    android:id="@+id/atanButton"
                     style="@style/Widget.AppCompat.Button.Borderless"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
                     android:layout_alignParentEnd="true"
-                    android:layout_toEndOf="@id/equalButton"
-                    android:textSize="24sp"
-                    android:text="+" />
+                    android:layout_toEndOf="@id/acosButton"
+                    android:textSize="18sp"
+                    android:text="ATAN" />
             </RelativeLayout>
         </LinearLayout>
     </LinearLayout>
-</LinearLayout>
+</FrameLayout>

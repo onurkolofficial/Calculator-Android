@@ -24,8 +24,7 @@
                     style="@style/Widget.AppCompat.Button.Borderless"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
-                    android:layout_marginEnd="20dp"
-                    android:textSize="24sp"
+                    android:textSize="22sp"
                     android:text="-/+" />
                 <!-- Percent Button !-->
                 <Button
@@ -33,9 +32,8 @@
                     style="@style/Widget.AppCompat.Button.Borderless"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
-                    android:layout_marginEnd="20dp"
                     android:layout_toEndOf="@id/negPosButton"
-                    android:textSize="24sp"
+                    android:textSize="22sp"
                     android:text="%" />
                 <!-- Clear Button !-->
                 <Button
@@ -43,9 +41,8 @@
                     style="@style/Widget.AppCompat.Button.Borderless"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
-                    android:layout_marginEnd="20dp"
                     android:layout_toEndOf="@id/percentButton"
-                    android:textSize="24sp"
+                    android:textSize="22sp"
                     android:text="C" />
                 <!-- Delete Button !-->
                 <Button
@@ -55,7 +52,7 @@
                     android:layout_height="100dp"
                     android:layout_alignParentEnd="true"
                     android:layout_toEndOf="@id/clearButton"
-                    android:textSize="24sp"
+                    android:textSize="22sp"
                     android:text="@string/del_text" />
             </RelativeLayout>
         </LinearLayout>
@@ -74,8 +71,7 @@
                     style="@style/Widget.AppCompat.Button.Borderless"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
-                    android:layout_marginEnd="20dp"
-                    android:textSize="24sp"
+                    android:textSize="22sp"
                     android:text="7" />
                 <!-- 8 Button !-->
                 <Button
@@ -83,9 +79,8 @@
                     style="@style/Widget.AppCompat.Button.Borderless"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
-                    android:layout_marginEnd="20dp"
                     android:layout_toEndOf="@id/calc7Button"
-                    android:textSize="24sp"
+                    android:textSize="22sp"
                     android:text="8" />
                 <!-- 9 Button !-->
                 <Button
@@ -93,9 +88,8 @@
                     style="@style/Widget.AppCompat.Button.Borderless"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
-                    android:layout_marginEnd="20dp"
                     android:layout_toEndOf="@id/calc8Button"
-                    android:textSize="24sp"
+                    android:textSize="22sp"
                     android:text="9" />
                 <!-- Division Button !-->
                 <Button
@@ -105,7 +99,7 @@
                     android:layout_height="100dp"
                     android:layout_alignParentEnd="true"
                     android:layout_toEndOf="@id/calc9Button"
-                    android:textSize="24sp"
+                    android:textSize="22sp"
                     android:text="/" />
             </RelativeLayout>
         </LinearLayout>
@@ -124,8 +118,7 @@
                     style="@style/Widget.AppCompat.Button.Borderless"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
-                    android:layout_marginEnd="20dp"
-                    android:textSize="24sp"
+                    android:textSize="22sp"
                     android:text="4" />
                 <!-- 5 Button !-->
                 <Button
@@ -133,9 +126,8 @@
                     style="@style/Widget.AppCompat.Button.Borderless"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
-                    android:layout_marginEnd="20dp"
                     android:layout_toEndOf="@id/calc4Button"
-                    android:textSize="24sp"
+                    android:textSize="22sp"
                     android:text="5" />
                 <!-- 6 Button !-->
                 <Button
@@ -143,9 +135,8 @@
                     style="@style/Widget.AppCompat.Button.Borderless"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
-                    android:layout_marginEnd="20dp"
                     android:layout_toEndOf="@id/calc5Button"
-                    android:textSize="24sp"
+                    android:textSize="22sp"
                     android:text="6" />
                 <!-- Multiple Button !-->
                 <Button
@@ -155,7 +146,7 @@
                     android:layout_height="100dp"
                     android:layout_alignParentEnd="true"
                     android:layout_toEndOf="@id/calc6Button"
-                    android:textSize="24sp"
+                    android:textSize="22sp"
                     android:textAllCaps="false"
                     android:text="x" />
             </RelativeLayout>
@@ -175,8 +166,7 @@
                     style="@style/Widget.AppCompat.Button.Borderless"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
-                    android:layout_marginEnd="20dp"
-                    android:textSize="24sp"
+                    android:textSize="22sp"
                     android:text="1" />
                 <!-- 2 Button !-->
                 <Button
@@ -184,9 +174,8 @@
                     style="@style/Widget.AppCompat.Button.Borderless"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
-                    android:layout_marginEnd="20dp"
                     android:layout_toEndOf="@id/calc1Button"
-                    android:textSize="24sp"
+                    android:textSize="22sp"
                     android:text="2" />
                 <!-- 3 Button !-->
                 <Button
@@ -194,9 +183,8 @@
                     style="@style/Widget.AppCompat.Button.Borderless"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
-                    android:layout_marginEnd="20dp"
                     android:layout_toEndOf="@id/calc2Button"
-                    android:textSize="24sp"
+                    android:textSize="22sp"
                     android:text="3" />
                 <!-- Extraction Button !-->
                 <Button
@@ -206,7 +194,7 @@
                     android:layout_height="100dp"
                     android:layout_alignParentEnd="true"
                     android:layout_toEndOf="@id/calc3Button"
-                    android:textSize="24sp"
+                    android:textSize="22sp"
                     android:text="-" />
             </RelativeLayout>
         </LinearLayout>
@@ -225,8 +213,7 @@
                     style="@style/Widget.AppCompat.Button.Borderless"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
-                    android:layout_marginEnd="20dp"
-                    android:textSize="24sp"
+                    android:textSize="22sp"
                     android:textStyle="bold"
                     android:text="." />
                 <!-- 0 Button !-->
@@ -235,9 +222,8 @@
                     style="@style/Widget.AppCompat.Button.Borderless"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
-                    android:layout_marginEnd="20dp"
                     android:layout_toEndOf="@id/colonButton"
-                    android:textSize="24sp"
+                    android:textSize="22sp"
                     android:text="0" />
                 <!-- Equal Button !-->
                 <Button
@@ -245,9 +231,8 @@
                     style="@style/Widget.AppCompat.Button.Borderless"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
-                    android:layout_marginEnd="20dp"
                     android:layout_toEndOf="@id/calc0Button"
-                    android:textSize="24sp"
+                    android:textSize="22sp"
                     android:text="=" />
                 <!-- Addition Button !-->
                 <Button
@@ -257,7 +242,7 @@
                     android:layout_height="100dp"
                     android:layout_alignParentEnd="true"
                     android:layout_toEndOf="@id/equalButton"
-                    android:textSize="24sp"
+                    android:textSize="22sp"
                     android:text="+" />
             </RelativeLayout>
         </LinearLayout>
