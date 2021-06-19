@@ -74,17 +74,17 @@
                 android:textAlignment="textEnd"
                 android:textSize="34sp"/>
         </LinearLayout>
+        <!-- ADS !-->
+        <com.startapp.sdk.ads.banner.Banner
+            android:id="@+id/startAppBanner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
         <!-- Calculator Buttons Pager !-->
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/calcButtonPager"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="20dp"/>
-        <!-- ADS !-->
-        <com.startapp.sdk.ads.banner.Banner
-            android:id="@+id/startAppBanner"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
     </LinearLayout>
     <!-- Drawer Menu !-->
     <LinearLayout

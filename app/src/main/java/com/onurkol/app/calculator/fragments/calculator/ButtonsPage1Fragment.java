@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.onurkol.app.calculator.R;
+import com.onurkol.app.calculator.activity.HistoryActivity;
 
 import org.mariuszgromada.math.mxparser.Expression;
 
@@ -196,6 +197,8 @@ public class ButtonsPage1Fragment extends Fragment {
     View.OnClickListener equalButtonClickListener=new View.OnClickListener() {
         @Override
         public void onClick(View view) {
+            // Updating Preference Data
+            HistoryActivity.updatePreferenceHistoryData();
             // Convert x to *
             String expressString=calcShowValue.getText().toString();
             String convertExpressString=expressString.replace("x","*");

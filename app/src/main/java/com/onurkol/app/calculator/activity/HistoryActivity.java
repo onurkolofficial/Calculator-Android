@@ -32,7 +32,7 @@ public class HistoryActivity extends AppCompatActivity {
 
     HistoryListAdapter historyAdapter;
 
-    SharedPreferenceManager prefManager;
+    static SharedPreferenceManager prefManager;
 
     static Gson gson=new Gson();
 
@@ -46,7 +46,7 @@ public class HistoryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history);
 
-        // Get Preference Manager
+        // Get Preference Manager(for Activity)
         prefManager=SharedPreferenceManager.getInstance();
 
         // Get Elements
@@ -78,29 +78,40 @@ public class HistoryActivity extends AppCompatActivity {
         // Get Preference
         String histories=prefManager.getString("CALC_HISTORY_DATA");
 
-        if(histories.equals("NULL")){
+        if(!histories.equals("NULL")){
+            // Show No History Layout
+            noHistoryLayout.setVisibility(View.GONE);
+            // Update Data
+            updatePreferenceHistoryData();
+        }
+        else{
             // Show No History Layout
             noHistoryLayout.setVisibility(View.VISIBLE);
             // Clear List
             getHistoryList().clear();
         }
-        else{
-            // Show No History Layout
-            noHistoryLayout.setVisibility(View.GONE);
-            // Data Convert String to List
-            List<HistoryData> getHistData=gson.fromJson(histories, new TypeToken<ArrayList<HistoryData>>(){}.getType());
+    }
 
+    public static void updatePreferenceHistoryData(){
+        // Get Preference Manager(for Class)
+        prefManager=SharedPreferenceManager.getInstance();
+        // Get Preference
+        String histories=prefManager.getString("CALC_HISTORY_DATA");
+        // Data Convert String to List
+        List<HistoryData> getHistData=gson.fromJson(histories, new TypeToken<ArrayList<HistoryData>>(){}.getType());
+
+        if(!histories.equals("NULL")) {
             int mainListSize=getHistoryList().size();
             int getListSize=getHistData.size();
             // Check Data
-            if(mainListSize<=0) {
-                int i=0;
-                while(i<getListSize){
+            if (mainListSize <= 0) {
+                int i = 0;
+                while (i < getListSize) {
                     // Get Data
-                    String gExpression=getHistData.get(i).getProcessExpression();
-                    String gValue=getHistData.get(i).getProcessValue();
+                    String gExpression = getHistData.get(i).getProcessExpression();
+                    String gValue = getHistData.get(i).getProcessValue();
                     // Add View
-                    getHistoryList().add(new HistoryData(gExpression,gValue));
+                    getHistoryList().add(new HistoryData(gExpression, gValue));
                     // Count
                     i++;
                 }

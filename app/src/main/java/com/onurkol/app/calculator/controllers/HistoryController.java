@@ -32,11 +32,11 @@ public class HistoryController {
             oldData=oldData.substring(1,(oldData.length()-1));
             // Add new Data
             mergeData=newData+","+oldData;
-            // Add Array symbol '[{data},{old},...]'
+            // Add Array symbol '[{newData},{old},...]'
             newData="["+mergeData+"]";
         }
         // Add View
-        getHistoryList().add(getHistData);
+        getHistoryList().add(0,getHistData);
 
         // Save Preference
         prefManager.setPreference("CALC_HISTORY_DATA",newData);
