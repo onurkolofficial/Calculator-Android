@@ -160,20 +160,28 @@ public class ButtonsPage1Fragment extends Fragment {
     };
 
     // -/+ Button Click
-    boolean defaultPos=true;
     View.OnClickListener negposButtonClickListener=new View.OnClickListener() {
         @Override
         public void onClick(View view) {
+            String getVal=calcShowValue.getText().toString();
             if(checkValueStringLength()) {
-                if (defaultPos) {
-                    defaultPos = false;
-                    // Insert Negative '-'
-                    calcShowValue.getText().insert(0, "-");
-                } else {
-                    defaultPos = true;
-                    // Delete Negative
-                    calcShowValue.getText().delete(0, 1);
+                Pattern pattern=Pattern.compile("([0-9]{1,100})");
+                Matcher matcher=pattern.matcher(getVal);
+
+                String val="";
+                int i=0;
+                while (matcher.find()){
+                    val=matcher.group(i);
+                    i++;
                 }
+                // Find Match
+                if(getVal.contains("-"+val))
+                    calcShowValue.setText(getVal.replace("-"+val,val));
+                else
+                    calcShowValue.setText(getVal.replace(val,"-"+val));
+
+                // Reset Selection Position
+                calcShowValue.setSelection(calcShowValue.getText().length());
             }
         }
     };
