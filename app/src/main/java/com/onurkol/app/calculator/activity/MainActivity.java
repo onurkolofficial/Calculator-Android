@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
@@ -43,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
     ImageButton openMenuButton, closeAppButton;
     ViewPager2 calcButtonPager;
     Button settingsButton, historyButton;
+    TextView menuToolbarTitle;
 
     LinearLayout calcDrawerMenuLayout;
     DrawerLayout calcDrawerMenu;
@@ -101,6 +103,10 @@ public class MainActivity extends AppCompatActivity {
         calcDrawerMenu=findViewById(R.id.calcDrawerMenu);
         settingsButton=findViewById(R.id.settingsButton);
         historyButton=findViewById(R.id.historyButton);
+        menuToolbarTitle=findViewById(R.id.toolbarTitle);
+
+        // Set Texts
+        menuToolbarTitle.setText(getString(R.string.menu_text));
 
         // Load Calculator Data
         loadGetIntentData(this.getIntent());

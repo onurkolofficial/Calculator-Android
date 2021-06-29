@@ -52,12 +52,10 @@ public class SettingData {
 
     private static void applyApplicationTheme(){
         int themeid=prefManager.getInteger("APP_THEME");
-        if(themeid==0){
+        if(themeid==0)
             getContext().setTheme(R.style.LightTheme);
-        }
-        else if(themeid==1){
+        else if(themeid==1)
             getContext().setTheme(R.style.DarkTheme);
-        }
 
     }
 }
