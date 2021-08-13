@@ -210,7 +210,7 @@ public class ButtonsPage1Fragment extends Fragment {
             // Convert x to *
             String expressString=calcShowValue.getText().toString();
             String convertExpressString=expressString.replace("x","*");
-            // TEST
+            // Process
             Expression express=new Expression(convertExpressString);
             String value=String.valueOf(express.calculate());
             // Check value int or float ('X.0' replaced to 'X')
@@ -221,6 +221,8 @@ public class ButtonsPage1Fragment extends Fragment {
             calcShowValue.setText(convertValue);
             // Add History
             addHistory(expressString,convertValue);
+            // Set Selection Position
+            calcShowValue.setSelection(convertValue.length());
         }
     };
 
