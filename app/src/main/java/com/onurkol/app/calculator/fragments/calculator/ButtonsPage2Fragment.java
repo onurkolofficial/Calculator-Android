@@ -66,38 +66,17 @@ public class ButtonsPage2Fragment extends Fragment {
         acosButton.setOnClickListener(printFunctionsClickListener);
         atanButton.setOnClickListener(printFunctionsClickListener);
         // Custom Events
-        logButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                calcShowValue.append("log10(");
-            }
+        logButton.setOnClickListener(view1 -> calcShowValue.append("log10("));
+        piButton.setOnClickListener(view1 -> calcShowValue.append("pi"));
+        factButton.setOnClickListener(view1 -> {
+            if(checkValueStringLength())
+                calcShowValue.append("!");
         });
-        piButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                calcShowValue.append("pi");
-            }
+        powerButton.setOnClickListener(view1 -> {
+            if(checkValueStringLength())
+                calcShowValue.append("^");
         });
-        factButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(checkValueStringLength())
-                    calcShowValue.append("!");
-            }
-        });
-        powerButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(checkValueStringLength())
-                    calcShowValue.append("^");
-            }
-        });
-        sqrtButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                calcShowValue.append("sqrt(");
-            }
-        });
+        sqrtButton.setOnClickListener(view1 -> calcShowValue.append("sqrt("));
 
         return view;
     }

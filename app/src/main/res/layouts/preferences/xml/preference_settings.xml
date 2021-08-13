@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <PreferenceCategory
+        android:title="@string/settings_category_appearance"
+        app:iconSpaceReserved="false">
+        <Preference
+            android:icon="@drawable/ic_baseline_view_carousel_24"
+            android:key="app_themes"
+            android:summary="@string/themes_summary"
+            android:title="@string/themes_text" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="@string/settings_category_other"
+        app:iconSpaceReserved="false">
+        <Preference
+            android:icon="@drawable/ic_outline_info_24"
+            android:key="app_about"
+            android:summary="@string/about_summary"
+            android:title="@string/about_text" />
+    </PreferenceCategory>
+</PreferenceScreen>

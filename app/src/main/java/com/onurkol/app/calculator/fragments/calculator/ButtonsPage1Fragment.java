@@ -12,13 +12,12 @@ import android.widget.EditText;
 
 import com.onurkol.app.calculator.R;
 import com.onurkol.app.calculator.activity.HistoryActivity;
+import com.onurkol.app.calculator.lib.calculator.history.HistoryManager;
 
 import org.mariuszgromada.math.mxparser.Expression;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import static com.onurkol.app.calculator.controllers.HistoryController.addHistory;
 
 public class ButtonsPage1Fragment extends Fragment {
 
@@ -205,8 +204,10 @@ public class ButtonsPage1Fragment extends Fragment {
     View.OnClickListener equalButtonClickListener=new View.OnClickListener() {
         @Override
         public void onClick(View view) {
+            // Get Classes
+            HistoryManager historyManager=HistoryManager.getManager();
             // Updating Preference Data
-            HistoryActivity.updatePreferenceHistoryData();
+            //HistoryActivity.updatePreferenceHistoryData();
             // Convert x to *
             String expressString=calcShowValue.getText().toString();
             String convertExpressString=expressString.replace("x","*");
@@ -220,7 +221,7 @@ public class ButtonsPage1Fragment extends Fragment {
             // Show Process Value
             calcShowValue.setText(convertValue);
             // Add History
-            addHistory(expressString,convertValue);
+            historyManager.addHistory(expressString,convertValue);
             // Set Selection Position
             calcShowValue.setSelection(convertValue.length());
         }

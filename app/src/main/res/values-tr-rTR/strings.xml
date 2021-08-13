@@ -20,8 +20,8 @@
     <string name="version_text">Sürüm</string>
     <string name="no_history_title">Geçmiş boş.</string>
     <string name="no_history_summary">Geçmişi görmek için işlem yapın.</string>
-    <string name="select_theme_text">Tema Seç</string>
-    <string name="select_theme_summary">Bir hesap makinesi görünümü seçin.</string>
+    <string name="themes_text">Temalar</string>
+    <string name="themes_summary">Uygulama temasını değiştirin.</string>
     <string name="settings_category_general">Genel</string>
     <string name="settings_category_appearance">Görünüm</string>
     <string name="light_theme_text">Aydınlık Tema</string>
@@ -30,4 +30,10 @@
     <string name="contact_text">İletişim</string>
     <string name="open_page_text">Sayfayı Aç</string>
     <string name="web_page_text">Web Sayfası</string>
+    <string name="app_version_text">Uygulama Sürümü</string>
+    <string name="android_version_text">Androd Sürümü</string>
+    <string name="developer_text">Geliştirici</string>
+    <string name="developer_web_page_text">Geliştirici Web Sayfası</string>
+    <string name="developer_web_page_summary">Geliştirici web sayfasını aç.</string>
+    <string name="system_theme_text">Sistem Teması</string>
 </resources>

@@ -9,8 +9,8 @@ android {
         applicationId "com.onurkol.app.calculator"
         minSdkVersion 23
         targetSdkVersion 30
-        versionCode 29
-        versionName "2.5.7"
+        versionCode 30
+        versionName "2.6.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -24,6 +24,20 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+    }
+    sourceSets {
+        main {
+            res {
+                srcDirs 'src\\main\\res',
+                        'src\\main\\res\\calculator',
+                        'src\\main\\res\\layouts',
+                        'src\\main\\res\\layouts\\activity',
+                        'src\\main\\res\\layouts\\preferences',
+                        'src\\main\\res\\layouts\\toolbars',
+                        'src\\main\\res\\layouts\\fragments',
+                        'src\\main\\res\\layouts\\items'
+            }
+        }
     }
 }
 

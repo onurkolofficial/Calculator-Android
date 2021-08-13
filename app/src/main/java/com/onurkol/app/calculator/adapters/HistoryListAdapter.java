@@ -20,12 +20,10 @@ import androidx.cardview.widget.CardView;
 import com.onurkol.app.calculator.R;
 import com.onurkol.app.calculator.activity.MainActivity;
 import com.onurkol.app.calculator.data.HistoryData;
-import com.onurkol.app.calculator.tools.LimitCharTool;
+import com.onurkol.app.calculator.lib.calculator.history.HistoryManager;
+import com.onurkol.app.calculator.tools.CharLimiter;
 
 import java.util.List;
-
-import static com.onurkol.app.calculator.controllers.HistoryController.removeHistory;
-import static com.onurkol.app.calculator.data.SettingData.getHistoryList;
 
 public class HistoryListAdapter extends ArrayAdapter<HistoryData> {
     private final LayoutInflater inflater;
@@ -59,62 +57,59 @@ public class HistoryListAdapter extends ArrayAdapter<HistoryData> {
         // Get Data
         final HistoryData hsData=historyData.get(position);
 
+        // Get Classes
+        HistoryManager historyManager=HistoryManager.getManager();
+
         // Character Limits
-        String Expression=LimitCharTool.LimitChar(hsData.getProcessExpression(), 26);
-        String Value=LimitCharTool.LimitChar(hsData.getProcessValue(),24);
+        String Expression=CharLimiter.Limit(hsData.getProcessExpression(), 26);
+        String Value=CharLimiter.Limit(hsData.getProcessValue(),24);
         // Write Data
         holder.expressionView.setText(Expression);
         holder.valueView.setText(Value);
 
         // Button Click Events
         // Delete Button
-        holder.deleteButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // Get Root View
-                View rView=view.getRootView();
-                // Delete HistoryData
-                removeHistory(position);
-                // Remove List Item
-                getHistoryList().remove(position);
-                // Refresh View
-                historyListView.invalidateViews();
-                // Check No History Layout
-                if(historyData.size()<=0) {
-                    // Get Element
-                    LinearLayout noHistoryLayout=rView.findViewById(R.id.noHistoryLayout);
-                    // Show No History Layout
-                    noHistoryLayout.setVisibility(View.VISIBLE);
-                }
+        holder.deleteButton.setOnClickListener(view -> {
+            // Get Root View
+            View rView=view.getRootView();
+            // Delete Data
+            historyManager.removeHistory(position);
+            // Remove List Item
+            //historyManager.getSavedHistoryData().remove(position);
+            // Refresh View
+            historyListView.invalidateViews();
+            // Check No History Layout
+            if(historyManager.getSavedHistoryData().size()<=0) {
+                // Get Element
+                LinearLayout noHistoryLayout=rView.findViewById(R.id.noHistoryLayout);
+                // Show No History Layout
+                noHistoryLayout.setVisibility(View.VISIBLE);
             }
         });
         // Open Button
-        holder.openHistoryData.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // Get Current Context Activity
-                Activity $this=(Activity)getContext();
-                // Create Main Activity
-                Intent mainActivity=new Intent($this, MainActivity.class);
-                // Create new Bundle
-                Bundle bundle = new Bundle();
-                // Set bundle Data
-                bundle.putBoolean("LOAD_INTENT_DATA",true);
-                bundle.putString("HISTORY_EXPRESSION",hsData.getProcessExpression());
-                bundle.putString("HISTORY_VALUE",hsData.getProcessValue());
-                // Put Intent in MainActivity
-                mainActivity.putExtras(bundle);
+        holder.openHistoryData.setOnClickListener(view -> {
+            // Get Current Context Activity
+            Activity $this=(Activity)getContext();
+            // Create Main Activity
+            Intent mainActivity=new Intent($this, MainActivity.class);
+            // Create new Bundle
+            Bundle bundle = new Bundle();
+            // Set bundle Data
+            bundle.putBoolean("LOAD_INTENT_DATA",true);
+            bundle.putString("HISTORY_EXPRESSION",hsData.getProcessExpression());
+            bundle.putString("HISTORY_VALUE",hsData.getProcessValue());
+            // Put Intent in MainActivity
+            mainActivity.putExtras(bundle);
 
-                // Check Exist MainActivity
-                if(!MainActivity.isCreate)
-                    // Start MainActivity
-                    $this.startActivity(mainActivity);
-                else
-                    // Update MainActivity Intent
-                    MainActivity.updatedIntent=mainActivity;
-                // Close Current Activity
-                $this.finish();
-            }
+            // Check Exist MainActivity
+            if(!MainActivity.isCreate)
+                // Start MainActivity
+                $this.startActivity(mainActivity);
+            else
+                // Update MainActivity Intent
+                MainActivity.updatedIntent=mainActivity;
+            // Close Current Activity
+            $this.finish();
         });
 
         return convertView;

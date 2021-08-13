@@ -14,8 +14,8 @@
     <string name="cancel_text">Cancel</string>
     <string name="settings_category_general">General</string>
     <string name="settings_category_appearance">Appearance</string>
-    <string name="select_theme_text">Select Theme</string>
-    <string name="select_theme_summary">Select a calculator theme.</string>
+    <string name="themes_text">Themes</string>
+    <string name="themes_summary">Change application theme.</string>
     <string name="yes_text">Yes</string>
     <string name="no_text">No</string>
     <string name="delete_text">Delete</string>
@@ -30,4 +30,10 @@
     <string name="contact_text">Contact</string>
     <string name="open_page_text">Open Page</string>
     <string name="web_page_text">Web Page</string>
+    <string name="app_version_text">App Version</string>
+    <string name="android_version_text">Android Version</string>
+    <string name="developer_text">Developer</string>
+    <string name="developer_web_page_text">Developer Web Page</string>
+    <string name="developer_web_page_summary">Open developer web page.</string>
+    <string name="system_theme_text">System Theme</string>
 </resources>

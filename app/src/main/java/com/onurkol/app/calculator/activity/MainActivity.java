@@ -5,10 +5,10 @@ import androidx.core.content.ContextCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.IntentSender;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -27,19 +27,12 @@ import com.google.android.play.core.install.model.InstallStatus;
 import com.google.android.play.core.install.model.UpdateAvailability;
 import com.google.android.play.core.tasks.OnSuccessListener;
 import com.onurkol.app.calculator.R;
-import com.onurkol.app.calculator.adapters.OKFragmentPagerAdapter;
-import com.onurkol.app.calculator.data.SettingData;
-import com.startapp.sdk.ads.banner.Banner;
-import com.startapp.sdk.ads.banner.BannerListener;
-import com.startapp.sdk.adsbase.StartAppAd;
-import com.startapp.sdk.adsbase.StartAppSDK;
-
-import static com.onurkol.app.calculator.data.SettingData.updateApplicationData;
-import static com.onurkol.app.calculator.tools.ContextTool.getContext;
-import static com.onurkol.app.calculator.tools.ContextTool.setContext;
+import com.onurkol.app.calculator.adapters.CalculatorButtonsPagerAdapter;
+import com.onurkol.app.calculator.lib.AppDataManager;
+import com.onurkol.app.calculator.lib.ContextManager;
 
 public class MainActivity extends AppCompatActivity {
-
+    // Elements
     EditText calcProcess, calcValue;
     ImageButton openMenuButton, closeAppButton;
     ViewPager2 calcButtonPager;
@@ -49,8 +42,9 @@ public class MainActivity extends AppCompatActivity {
     LinearLayout calcDrawerMenuLayout;
     DrawerLayout calcDrawerMenu;
 
-    public static boolean isCreate=false;
-    public static Intent updatedIntent=null;
+    // Variables
+    public static Intent updatedIntent;
+    public static boolean isCreate;
 
     // Update Variables
     private AppUpdateManager mAppUpdateManager;
@@ -58,41 +52,14 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        // Set Context
-        setContext(this);
-        // Init Preferences & App Data
-        updateApplicationData();
+        // Building ContextManager
+        // .BuildBase only MainActivity.
+        ContextManager.BuildBase(this);
+        // Load App Data
+        AppDataManager.loadApplicationData();
         // Create
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        // Set isCreate value
-        isCreate=true;
-
-        // Ads Initialize
-        String getAppId=getString(R.string.startapp_app_id);
-        StartAppSDK.init(this, getAppId, false);
-        // Disable Startapp Splash Screen.
-        StartAppAd.disableSplash();
-        // Get Banner
-        final Banner appBanner=findViewById(R.id.startAppBanner);
-        // Set Listener
-        appBanner.setBannerListener(new BannerListener() {
-            @Override
-            public void onReceiveAd(View view) {
-                appBanner.setVisibility(View.VISIBLE);
-            }
-            @Override
-            public void onFailedToReceiveAd(View view) {
-                appBanner.setVisibility(View.GONE);
-            }
-            @Override
-            public void onImpression(View view) {}
-            @Override
-            public void onClick(View view) {}
-        });
-        // Hide Default
-        appBanner.setVisibility(View.GONE);
-
         // Get Elements
         calcProcess=findViewById(R.id.calcShowProcess);
         calcValue=findViewById(R.id.calcShowValue);
@@ -106,72 +73,70 @@ public class MainActivity extends AppCompatActivity {
         menuToolbarTitle=findViewById(R.id.toolbarTitle);
 
         // Set Texts
-        menuToolbarTitle.setText(getString(R.string.menu_text));
+        menuToolbarTitle.setText(getString(R.string.app_name));
 
-        // Load Calculator Data
-        loadGetIntentData(this.getIntent());
+        // Load Data
+        onLoadIntentData(this.getIntent());
 
         // Button Click Events
+        Context context=this;
         // Close App
-        closeAppButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                System.exit(0);
-            }
-        });
+        closeAppButton.setOnClickListener(view -> System.exit(0));
         // Open Menu
-        openMenuButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                calcDrawerMenu.openDrawer(calcDrawerMenuLayout);
-            }
-        });
+        openMenuButton.setOnClickListener(view -> calcDrawerMenu.openDrawer(calcDrawerMenuLayout));
         // Start Settings Activity
-        settingsButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // Close Drawer
-                calcDrawerMenu.closeDrawer(calcDrawerMenuLayout);
-                // Start Activity
-                startActivity(new Intent(getContext(),SettingsActivity.class));
-            }
+        settingsButton.setOnClickListener(view -> {
+            // Close Drawer
+            calcDrawerMenu.closeDrawer(calcDrawerMenuLayout);
+            // Start Activity
+            startActivity(new Intent(context,SettingsActivity.class));
         });
         // Start History Activity
-        historyButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // Close Drawer
-                calcDrawerMenu.closeDrawer(calcDrawerMenuLayout);
-                // Start Activity
-                startActivity(new Intent(getContext(),HistoryActivity.class));
-            }
+        historyButton.setOnClickListener(view -> {
+            // Close Drawer
+            calcDrawerMenu.closeDrawer(calcDrawerMenuLayout);
+            // Start Activity
+            startActivity(new Intent(context,HistoryActivity.class));
         });
         // Init App
         // Set Pager Adapter
-        calcButtonPager.setAdapter(new OKFragmentPagerAdapter(this));
+        calcButtonPager.setAdapter(new CalculatorButtonsPagerAdapter(this));
         // Disable Keyboard & Focus
         calcValue.setShowSoftInputOnFocus(false);
         calcValue.requestFocus();
+
+        isCreate=true;
     }
 
-    private void loadGetIntentData(Intent intent){
+    private void onLoadIntentData(Intent intent){
         if(intent.getBooleanExtra("LOAD_INTENT_DATA",false)){
             calcProcess.setText(intent.getStringExtra("HISTORY_EXPRESSION"));
             calcValue.setText(intent.getStringExtra("HISTORY_VALUE"));
         }
     }
+    /*
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        // Save State
+        outState.putString("KEY_APP_STATE_EXPRESSION",calcProcess.getText().toString());
+        outState.putString("KEY_APP_STATE_VALUE",calcValue.getText().toString());
+    }
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        // Get State
+        calcProcess.setText(savedInstanceState.getString("KEY_APP_STATE_EXPRESSION"));
+        calcValue.setText(savedInstanceState.getString("KEY_APP_STATE_VALUE"));
+    }
+     */
 
     @Override
     protected void onResume() {
-        // Check Theme Changed
-        if(SettingData.isThemeChanged){
-            SettingData.isThemeChanged=false;
-            this.recreate();
-        }
         // Check Updated Intent
         if(updatedIntent!=null){
             // Load Calculator Data
-            loadGetIntentData(updatedIntent);
+            onLoadIntentData(updatedIntent);
         }
         super.onResume();
     }
