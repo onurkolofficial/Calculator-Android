@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Hesap Makinesi</string>
+    <string name="lang_system_default">Sistem Dili</string>
+    <string name="lang_english_text">İngilizce</string>
+    <string name="lang_turkish_text">Türkçe</string>
     <string name="back_text">Geri</string>
     <string name="settings_text">Ayarlar</string>
     <string name="close_app_text">Uygulamayı Kapat</string>
@@ -31,9 +34,11 @@
     <string name="open_page_text">Sayfayı Aç</string>
     <string name="web_page_text">Web Sayfası</string>
     <string name="app_version_text">Uygulama Sürümü</string>
-    <string name="android_version_text">Androd Sürümü</string>
+    <string name="android_version_text">Android Sürümü</string>
     <string name="developer_text">Geliştirici</string>
     <string name="developer_web_page_text">Geliştirici Web Sayfası</string>
     <string name="developer_web_page_summary">Geliştirici web sayfasını aç.</string>
     <string name="system_theme_text">Sistem Teması</string>
+    <string name="language_text">Dil</string>
+    <string name="language_settings_summary">Uygulama dilini değiştir.</string>
 </resources>

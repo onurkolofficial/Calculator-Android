@@ -8,10 +8,11 @@ import androidx.preference.PreferenceFragmentCompat;
 
 import com.onurkol.app.calculator.R;
 import com.onurkol.app.calculator.activity.settings.SettingsAboutActivity;
+import com.onurkol.app.calculator.activity.settings.SettingsLanguagesActivity;
 import com.onurkol.app.calculator.activity.settings.SettingsThemesActivity;
 
 public class SettingsFragment extends PreferenceFragmentCompat {
-    Preference themesPref,aboutPref;
+    Preference themesPref,langsPref,aboutPref;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -20,12 +21,18 @@ public class SettingsFragment extends PreferenceFragmentCompat {
 
         // Get Preferences
         themesPref=findPreference("app_themes");
+        langsPref=findPreference("app_languages");
         aboutPref=findPreference("app_about");
 
         // Preference Click Events
         themesPref.setOnPreferenceClickListener(preference -> {
             // Start About Activity
             startActivity(new Intent(getActivity(), SettingsThemesActivity.class));
+            return false;
+        });
+        langsPref.setOnPreferenceClickListener(preference -> {
+            // Start About Activity
+            startActivity(new Intent(getActivity(), SettingsLanguagesActivity.class));
             return false;
         });
         aboutPref.setOnPreferenceClickListener(preference -> {

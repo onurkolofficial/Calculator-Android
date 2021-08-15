@@ -1,6 +1,9 @@
 <resources>
     <string name="startapp_app_id" translatable="false">209206067</string>
     <string name="app_name">Calculator</string>
+    <string name="lang_system_default">System Language</string>
+    <string name="lang_english_text">English</string>
+    <string name="lang_turkish_text">Turkish</string>
     <string name="back_text">Back</string>
     <string name="settings_text">Settings</string>
     <string name="close_app_text">Close App</string>
@@ -36,4 +39,6 @@
     <string name="developer_web_page_text">Developer Web Page</string>
     <string name="developer_web_page_summary">Open developer web page.</string>
     <string name="system_theme_text">System Theme</string>
+    <string name="language_text">Language</string>
+    <string name="language_settings_summary">Change application language.</string>
 </resources>

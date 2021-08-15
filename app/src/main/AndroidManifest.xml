@@ -11,6 +11,7 @@
         android:roundIcon="@drawable/app_icon_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Calculator">
+        <activity android:name=".activity.settings.SettingsLanguagesActivity"/>
         <activity android:name=".activity.settings.SettingsThemesActivity"/>
         <activity android:name=".activity.settings.SettingsAboutActivity"/>
         <activity android:name=".activity.SettingsActivity"/>

@@ -5,18 +5,23 @@
         android:title="@string/settings_category_appearance"
         app:iconSpaceReserved="false">
         <Preference
-            android:icon="@drawable/ic_baseline_view_carousel_24"
             android:key="app_themes"
             android:summary="@string/themes_summary"
-            android:title="@string/themes_text" />
+            android:title="@string/themes_text"
+            app:icon="@drawable/ic_baseline_view_carousel_24"/>
+        <Preference
+            android:key="app_languages"
+            android:summary="@string/language_settings_summary"
+            android:title="@string/language_text"
+            app:icon="@drawable/ic_baseline_translate_24"/>
     </PreferenceCategory>
     <PreferenceCategory
         android:title="@string/settings_category_other"
         app:iconSpaceReserved="false">
         <Preference
-            android:icon="@drawable/ic_outline_info_24"
             android:key="app_about"
             android:summary="@string/about_summary"
-            android:title="@string/about_text" />
+            android:title="@string/about_text"
+            app:icon="@drawable/ic_outline_info_24"/>
     </PreferenceCategory>
 </PreferenceScreen>

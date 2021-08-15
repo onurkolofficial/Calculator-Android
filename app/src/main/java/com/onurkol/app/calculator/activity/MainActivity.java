@@ -45,6 +45,8 @@ public class MainActivity extends AppCompatActivity {
     // Variables
     public static Intent updatedIntent;
     public static boolean isCreate;
+    // Variables
+    public static boolean isConfigChanged=false;
 
     // Update Variables
     private AppUpdateManager mAppUpdateManager;
@@ -133,10 +135,20 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onResume() {
+        // Re-Building ContextManager
+        ContextManager.BuildBase(this);
         // Check Updated Intent
         if(updatedIntent!=null){
             // Load Calculator Data
             onLoadIntentData(updatedIntent);
+        }
+        // Check Config Changes
+        if(isConfigChanged) {
+            // Reset for MainActivity
+            AppDataManager.loadApplicationData();
+            recreate();
+            // Reset Variables
+            isConfigChanged=false;
         }
         super.onResume();
     }

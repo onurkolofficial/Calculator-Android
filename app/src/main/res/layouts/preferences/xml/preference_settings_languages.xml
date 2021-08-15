@@ -3,17 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <CheckBoxPreference
         android:defaultValue="false"
-        android:key="pref_system_theme"
-        android:title="@string/system_theme_text"
+        android:key="pref_lang_system"
+        android:title="@string/lang_system_default"
         app:icon="@drawable/ic_baseline_sync_24"/>
     <CheckBoxPreference
         android:defaultValue="false"
-        android:key="pref_light_theme"
-        android:title="@string/light_theme_text"
-        app:icon="@drawable/ic_baseline_light_mode_24"/>
+        android:key="pref_lang_english"
+        android:title="@string/lang_english_text"
+        app:icon="@drawable/ic_baseline_translate_24"/>
     <CheckBoxPreference
         android:defaultValue="false"
-        android:key="pref_dark_theme"
-        android:title="@string/dark_theme_text"
-        app:icon="@drawable/ic_baseline_dark_mode_24"/>
+        android:key="pref_lang_turkish"
+        android:title="@string/lang_turkish_text"
+        app:icon="@drawable/ic_baseline_translate_24"/>
 </PreferenceScreen>
