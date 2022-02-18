@@ -9,6 +9,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentSender;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -27,6 +28,7 @@ import com.google.android.play.core.install.model.InstallStatus;
 import com.google.android.play.core.install.model.UpdateAvailability;
 import com.google.android.play.core.tasks.OnSuccessListener;
 import com.onurkol.app.calculator.R;
+import com.onurkol.app.calculator.activity.tools.CurrencyActivity;
 import com.onurkol.app.calculator.adapters.CalculatorButtonsPagerAdapter;
 import com.onurkol.app.calculator.lib.AppDataManager;
 import com.onurkol.app.calculator.lib.ContextManager;
@@ -36,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
     EditText calcProcess, calcValue;
     ImageButton openMenuButton, closeAppButton;
     ViewPager2 calcButtonPager;
-    Button settingsButton, historyButton;
+    Button settingsButton, historyButton, currencyConverterButton;
     TextView menuToolbarTitle;
 
     LinearLayout calcDrawerMenuLayout;
@@ -45,9 +47,10 @@ public class MainActivity extends AppCompatActivity {
     // Variables
     public static Intent updatedIntent;
     public static boolean isCreate;
-    // Variables
     public static boolean isConfigChanged=false;
 
+    // Currency Tool
+    public static boolean isGetCurrencyData=false;
     // Update Variables
     private AppUpdateManager mAppUpdateManager;
     private static final int RC_APP_UPDATE = 11;
@@ -57,10 +60,11 @@ public class MainActivity extends AppCompatActivity {
         // Building ContextManager
         // .BuildBase only MainActivity.
         ContextManager.BuildBase(this);
-        // Load App Data
-        AppDataManager.loadApplicationData();
         // Create
         super.onCreate(savedInstanceState);
+        // Load App Data (fixed for Drawer Layout & Pager Theme)
+        AppDataManager.loadApplicationData();
+        // View
         setContentView(R.layout.activity_main);
         // Get Elements
         calcProcess=findViewById(R.id.calcShowProcess);
@@ -73,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
         settingsButton=findViewById(R.id.settingsButton);
         historyButton=findViewById(R.id.historyButton);
         menuToolbarTitle=findViewById(R.id.toolbarTitle);
+        currencyConverterButton=findViewById(R.id.currencyConverterButton);
 
         // Set Texts
         menuToolbarTitle.setText(getString(R.string.app_name));
@@ -99,6 +104,13 @@ public class MainActivity extends AppCompatActivity {
             calcDrawerMenu.closeDrawer(calcDrawerMenuLayout);
             // Start Activity
             startActivity(new Intent(context,HistoryActivity.class));
+        });
+        // Start Currency Converter
+        currencyConverterButton.setOnClickListener(view -> {
+            // Close Drawer
+            calcDrawerMenu.closeDrawer(calcDrawerMenuLayout);
+            // Start Activity
+            startActivity(new Intent(context, CurrencyActivity.class));
         });
         // Init App
         // Set Pager Adapter

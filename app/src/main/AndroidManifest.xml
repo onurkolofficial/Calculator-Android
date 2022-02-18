@@ -12,23 +12,27 @@
         android:roundIcon="@drawable/app_icon_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Calculator">
-        <activity android:name=".activity.settings.SettingsLanguagesActivity"/>
-        <activity android:name=".activity.settings.SettingsThemesActivity"/>
-        <activity android:name=".activity.settings.SettingsAboutActivity"/>
-        <activity android:name=".activity.SettingsActivity"/>
-        <activity android:name=".activity.HistoryActivity"/>
+        <activity
+            android:name=".activity.tools.CurrencyActivity"
+            android:exported="false" />
+        <activity android:name=".activity.settings.SettingsLanguagesActivity" />
+        <activity android:name=".activity.settings.SettingsThemesActivity" />
+        <activity android:name=".activity.settings.SettingsAboutActivity" />
+        <activity android:name=".activity.SettingsActivity" />
+        <activity android:name=".activity.HistoryActivity" />
         <activity
             android:name=".activity.MainActivity"
-            android:windowSoftInputMode="stateAlwaysHidden"
-            android:exported="true">
+            android:exported="true"
+            android:windowSoftInputMode="stateAlwaysHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
             <meta-data
                 android:name="android.app.shortcuts"
-                android:resource="@xml/shortcuts"/>
+                android:resource="@xml/shortcuts" />
         </activity>
     </application>
 

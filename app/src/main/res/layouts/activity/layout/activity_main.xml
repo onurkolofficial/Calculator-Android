@@ -23,7 +23,8 @@
                 android:layout_height="match_parent"
                 android:background="?attr/actionBarItemBackground"
                 android:src="@drawable/ic_baseline_menu_24"
-                android:tooltipText="@string/menu_text"/>
+                android:tooltipText="@string/menu_text"
+                android:contentDescription="@string/menu_text"/>
             <!-- Toolbar Right Menu !-->
             <LinearLayout
                 android:layout_width="match_parent"
@@ -37,7 +38,8 @@
                     android:layout_height="match_parent"
                     android:background="?attr/actionBarItemBackground"
                     android:src="@drawable/ic_baseline_close_24"
-                    android:tooltipText="@string/close_app_text"/>
+                    android:tooltipText="@string/close_app_text"
+                    android:contentDescription="@string/close_app_text"/>
             </LinearLayout>
         </LinearLayout>
         <!-- Calculator Show Process and Value !-->
@@ -136,6 +138,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="?android:attr/listDivider" />
+            <!-- History Button !-->
+            <Button
+                android:id="@+id/currencyConverterButton"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start|center_vertical"
+                android:paddingStart="10dp"
+                android:text="@string/currency_converter_text"
+                android:textAllCaps="false"
+                app:icon="@drawable/ic_baseline_attach_money_24"/>
         </LinearLayout>
     </LinearLayout>
 </androidx.drawerlayout.widget.DrawerLayout>

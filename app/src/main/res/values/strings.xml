@@ -41,4 +41,8 @@
     <string name="system_theme_text">System Theme</string>
     <string name="language_text">Language</string>
     <string name="language_settings_summary">Change application language.</string>
+    <string name="currency_converter_text">Currency Converter</string>
+    <string name="please_wait_text">Please Wait ...</string>
+    <string name="app_package_text">Application Package</string>
+    <string name="app_package_free_text">Free</string>
 </resources>

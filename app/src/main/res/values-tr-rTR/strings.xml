@@ -41,4 +41,8 @@
     <string name="system_theme_text">Sistem Teması</string>
     <string name="language_text">Dil</string>
     <string name="language_settings_summary">Uygulama dilini değiştir.</string>
+    <string name="currency_converter_text">Para Birimi Dönüştürücü</string>
+    <string name="please_wait_text">Lütfen Bekleyin ...</string>
+    <string name="app_package_text">Uygulama Paketi</string>
+    <string name="app_package_free_text">Ücretsiz</string>
 </resources>
