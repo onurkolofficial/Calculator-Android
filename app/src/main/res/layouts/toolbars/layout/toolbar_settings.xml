@@ -1,26 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
 <androidx.appcompat.widget.Toolbar
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/browserSettingsToolbar"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/settingsToolbar"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:contentInsetStart="0dp">
-    <!-- Back Button !-->
-    <ImageButton
-        android:id="@+id/backButton"
-        android:layout_width="45dp"
-        android:layout_height="match_parent"
-        android:background="?attr/actionBarItemBackground"
-        android:src="@drawable/ic_baseline_arrow_back_24"
-        android:tooltipText="@string/back_text"
-        app:tint="@color/primary" />
-    <!-- Setting Name !-->
-    <TextView
-        android:id="@+id/settingName"
+    <!-- Toolbar Layout !-->
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingStart="10dp"
-        android:textSize="20sp"
-        android:textColor="@color/primary"
-        android:text="SETTING_NAME"/>
+        android:layout_height="60dp"
+        android:orientation="horizontal">
+        <!-- Back Button !-->
+        <ImageButton
+            android:id="@+id/settingsBackButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:padding="20dp"
+            android:scaleType="center"
+            android:contentDescription="@string/str_back"
+            android:tooltipText="@string/str_back"
+            app:srcCompat="@drawable/baseline_arrow_back_ios_new_24"
+            app:tint="@color/btn_text_color"
+            tools:targetApi="o" />
+        <!-- Setting Name !-->
+        <TextView
+            android:id="@+id/settingsTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="sans-serif-medium"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:text="SETTING_TITLE"
+            android:textSize="@dimen/toolbar_settings_title_font_size" />
+    </LinearLayout>
 </androidx.appcompat.widget.Toolbar>

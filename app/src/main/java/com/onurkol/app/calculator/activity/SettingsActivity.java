@@ -1,65 +1,106 @@
 package com.onurkol.app.calculator.activity;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.LinearLayoutCompat;
+
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.onurkol.app.calculator.R;
-import com.onurkol.app.calculator.fragments.SettingsFragment;
-import com.onurkol.app.calculator.lib.AppDataManager;
-import com.onurkol.app.calculator.lib.ContextManager;
+import com.onurkol.app.calculator.activity.settings.AboutActivity;
+import com.onurkol.app.calculator.activity.settings.LanguageActivity;
+import com.onurkol.app.calculator.activity.settings.ThemeActivity;
+import com.onurkol.app.calculator.activity.settings.UIModeActivity;
+import com.onurkol.app.calculator.interfaces.AppSettingsInterface;
+import com.onurkol.app.calculator.libs.AppPreferenceManager;
+import com.onurkol.app.calculator.libs.AppSettingsInitializeManager;
+import com.onurkol.app.calculator.libs.settings.LanguageManager;
+import com.onurkol.app.calculator.libs.settings.ThemeManager;
+import com.onurkol.app.calculator.libs.settings.UIModeManager;
 
-public class SettingsActivity extends AppCompatActivity {
-    // Elements
-    ImageButton backButton;
-    TextView settingName;
+public class SettingsActivity extends AppCompatActivity implements AppSettingsInterface {
+    ThemeManager themeManager;
+    AppPreferenceManager appPreferenceManager;
+    UIModeManager uiModeManager;
+    LanguageManager languageManager;
 
-    // Variables
-    public static boolean isConfigChanged=false;
+    ImageButton settingsBackButton;
+    TextView settingsTitle, appearanceTitle, otherTitle;
+    LinearLayoutCompat uiModeButton, themeButton, languageButton, aboutButton;
+
+    public static boolean isConfigChanged = false,
+            isLanguageChanged = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        // Set Current Activity Context
-        ContextManager.Build(this);
-        // Load App Data
-        AppDataManager.loadApplicationData();
-        // Create
+        AppSettingsInitializeManager.onStart(this);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
-        // Get Elements
-        backButton=findViewById(R.id.backButton);
-        settingName=findViewById(R.id.settingName);
-        // Set Toolbar Title
-        settingName.setText(getString(R.string.settings_text));
 
-        // Button Click Events
-        backButton.setOnClickListener(view -> {
-            // Close Activity
-            finish();
+        themeManager = ThemeManager.getInstance();
+        appPreferenceManager = AppPreferenceManager.getInstance(this);
+        uiModeManager = UIModeManager.getInstance();
+        languageManager = LanguageManager.getInstance();
+
+        settingsBackButton = findViewById(R.id.settingsBackButton);
+        settingsTitle = findViewById(R.id.settingsTitle);
+        appearanceTitle = findViewById(R.id.appearanceTitle);
+        otherTitle = findViewById(R.id.otherTitle);
+        uiModeButton = findViewById(R.id.uiModeButton);
+        themeButton = findViewById(R.id.themeButton);
+        languageButton = findViewById(R.id.languageButton);
+        aboutButton = findViewById(R.id.aboutButton);
+
+        settingsTitle.setText(getString(R.string.str_settings));
+
+        startAppTheme();
+
+        settingsBackButton.setOnClickListener(view -> finish());
+
+        uiModeButton.setOnClickListener(view -> {
+            Intent intent = new Intent(this, UIModeActivity.class);
+            startActivity(intent);
+        });
+        themeButton.setOnClickListener(view -> {
+            Intent intent = new Intent(this, ThemeActivity.class);
+            startActivity(intent);
+        });
+        languageButton.setOnClickListener(view -> {
+            Intent intent = new Intent(this, LanguageActivity.class);
+            startActivity(intent);
+        });
+        aboutButton.setOnClickListener(view -> {
+            Intent intent = new Intent(this, AboutActivity.class);
+            startActivity(intent);
         });
 
-        // Set Fragment
-        getSupportFragmentManager()
-                .beginTransaction()
-                .add(R.id.settingsFragmentContent,new SettingsFragment()).commit();
+    }
+
+    private void startAppTheme(){
+        themeManager.setBackgroundTint(this, settingsBackButton);
+        themeManager.setTextColor(this, settingsTitle);
+        themeManager.setTextColor(this, appearanceTitle);
+        themeManager.setTextColor(this, otherTitle);
     }
 
     @Override
     protected void onResume() {
-        // Re-set Context
-        ContextManager.Build(this);
-        // Check Config Changes
-        if(isConfigChanged) {
-            MainActivity.isConfigChanged=true;
-            // Load Data
-            AppDataManager.loadApplicationData();
-            recreate();
-            // Reset Variables
-            isConfigChanged=false;
+        if(isConfigChanged){
+            MainActivity.isConfigChanged = true;
+            startAppTheme();
+            uiModeManager.setAppUIMode(appPreferenceManager.getInt(_APP_KEY_UI_MODE));
         }
+        if(isLanguageChanged){
+            MainActivity.isLanguageChanged = true;
+            languageManager.setAppLanguage(this, appPreferenceManager.getInt(_APP_KEY_LANGUAGE));
+            recreate();
+        }
+
+        isLanguageChanged = false;
+        isConfigChanged = false;
         super.onResume();
     }
 }

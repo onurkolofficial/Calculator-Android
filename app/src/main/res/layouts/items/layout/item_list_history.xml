@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!-- Item Card View !-->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/openViewButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="?attr/selectableItemBackground"
+        card_view:cardUseCompatPadding="false"
+        card_view:cardCornerRadius="22dp"
+        card_view:cardElevation="14dp">
+        <!-- CardView Content !-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:paddingTop="18dp"
+            android:paddingBottom="18dp"
+            android:orientation="horizontal">
+            <!-- History Icon !-->
+            <ImageView
+                android:layout_width="42dp"
+                android:padding="6dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/baseline_history_24"
+                app:tint="@color/white" />
+            <!-- Data Layout !-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <!-- Expression Text !-->
+                <TextView
+                    android:id="@+id/expressionText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:textColor="@color/white"
+                    android:text="EXPRESSION_TEXT" />
+                <!-- Value Text !-->
+                <TextView
+                    android:id="@+id/valueText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:textSize="18sp"
+                    android:textColor="@color/white"
+                    android:text="VALUE_TEXT" />
+            </LinearLayout>
+            <!-- Delete Button !-->
+            <ImageButton
+                android:id="@+id/deleteHistoryButton"
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.1"
+                android:background="?attr/selectableItemBackground"
+                android:src="@drawable/baseline_delete_24"
+                app:tint="@color/white" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

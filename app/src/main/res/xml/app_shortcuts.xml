@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut
+        android:shortcutId="shortcut_settings"
+        android:enabled="true"
+        android:icon="@drawable/shortcut_settings"
+        android:shortcutShortLabel="@string/str_settings"
+        android:shortcutLongLabel="@string/str_settings"
+        android:shortcutDisabledMessage="@string/str_settings"
+        tools:targetApi="n_mr1">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="com.onurkol.app.calculator"
+            android:targetClass="com.onurkol.app.calculator.activity.SettingsActivity" />
+    </shortcut>
+    <shortcut
+        android:shortcutId="shortcut_history"
+        android:enabled="true"
+        android:icon="@drawable/shortcut_history"
+        android:shortcutShortLabel="@string/str_history"
+        android:shortcutLongLabel="@string/str_history"
+        android:shortcutDisabledMessage="@string/str_history"
+        tools:targetApi="n_mr1">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="com.onurkol.app.calculator"
+            android:targetClass="com.onurkol.app.calculator.activity.HistoryActivity" />
+    </shortcut>
+</shortcuts>

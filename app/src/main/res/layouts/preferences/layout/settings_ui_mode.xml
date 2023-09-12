@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <!-- Button: Use System !-->
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/uiModeSystemButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="?attr/selectableItemBackground"
+                android:layout_marginTop="@dimen/custom_preferences_button_first_margin_top"
+                android:layout_marginBottom="@dimen/custom_preferences_button_margin_bottom">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:padding="@dimen/custom_preferences_icon_padding"
+                    android:gravity="start"
+                    app:srcCompat="@drawable/baseline_sync_24" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:fontFamily="sans-serif"
+                        android:textSize="@dimen/custom_preferences_title_font_size"
+                        android:text="@string/str_use_system" />
+                </LinearLayout>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+            <!-- Button: Day Mode !-->
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/uiModeDayButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="?attr/selectableItemBackground"
+                android:layout_marginTop="@dimen/custom_preferences_button_margin_top"
+                android:layout_marginBottom="@dimen/custom_preferences_button_margin_bottom">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:padding="@dimen/custom_preferences_icon_padding"
+                    android:gravity="start"
+                    app:srcCompat="@drawable/baseline_light_mode_24" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:fontFamily="sans-serif"
+                        android:textSize="@dimen/custom_preferences_title_font_size"
+                        android:text="@string/str_ui_day" />
+                </LinearLayout>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+            <!-- Button: Use System !-->
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/uiModeNightButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="?attr/selectableItemBackground"
+                android:layout_marginTop="@dimen/custom_preferences_button_margin_top"
+                android:layout_marginBottom="@dimen/custom_preferences_button_margin_bottom">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:padding="@dimen/custom_preferences_icon_padding"
+                    android:gravity="start"
+                    app:srcCompat="@drawable/baseline_mode_night_24" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:fontFamily="sans-serif"
+                        android:textSize="@dimen/custom_preferences_title_font_size"
+                        android:text="@string/str_ui_night" />
+                </LinearLayout>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

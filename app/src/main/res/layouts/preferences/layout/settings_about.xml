@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <!-- Category:Version !-->
+            <TextView
+                android:id="@+id/versionTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="sans-serif"
+                android:layout_marginTop="@dimen/custom_preferences_category_margin_top"
+                android:layout_marginBottom="@dimen/custom_preferences_category_margin_bottom"
+                android:layout_marginStart="@dimen/custom_preferences_category_margin_start"
+                android:layout_marginEnd="@dimen/custom_preferences_category_margin_end"
+                android:text="@string/str_version"
+                android:textSize="@dimen/custom_preferences_category_title_font_size" />
+            <!-- Button: App Version !-->
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingStart="@dimen/custom_preferences_button_padding"
+                android:paddingEnd="@dimen/custom_preferences_button_padding"
+                android:paddingTop="@dimen/custom_preferences_button_summary_padding_top_bottom"
+                android:paddingBottom="@dimen/custom_preferences_button_summary_padding_top_bottom"
+                android:background="?attr/selectableItemBackground"
+                android:layout_marginTop="@dimen/custom_preferences_button_first_margin_top"
+                android:layout_marginBottom="@dimen/custom_preferences_button_margin_bottom">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:fontFamily="sans-serif-medium"
+                        android:textSize="@dimen/custom_preferences_title_font_size"
+                        android:text="@string/str_app_version" />
+                    <TextView
+                        android:id="@+id/appVersionSummary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/custom_preferences_summary_font_size"
+                        android:text="SUMMARY_TEXT" />
+                </LinearLayout>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+            <!-- Button: OS Version !-->
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingStart="@dimen/custom_preferences_button_padding"
+                android:paddingEnd="@dimen/custom_preferences_button_padding"
+                android:paddingTop="@dimen/custom_preferences_button_summary_padding_top_bottom"
+                android:paddingBottom="@dimen/custom_preferences_button_summary_padding_top_bottom"
+                android:background="?attr/selectableItemBackground"
+                android:layout_marginTop="@dimen/custom_preferences_button_margin_top"
+                android:layout_marginBottom="@dimen/custom_preferences_button_margin_bottom">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:fontFamily="sans-serif-medium"
+                        android:textSize="@dimen/custom_preferences_title_font_size"
+                        android:text="@string/str_os_version" />
+                    <TextView
+                        android:id="@+id/osVersionSummary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/custom_preferences_summary_font_size"
+                        android:text="SUMMARY_TEXT" />
+                </LinearLayout>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <!-- Category:Contact !-->
+            <TextView
+                android:id="@+id/contactTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="sans-serif"
+                android:layout_marginTop="@dimen/custom_preferences_category_margin_top"
+                android:layout_marginBottom="@dimen/custom_preferences_category_margin_bottom"
+                android:layout_marginStart="@dimen/custom_preferences_category_margin_start"
+                android:layout_marginEnd="@dimen/custom_preferences_category_margin_end"
+                android:text="@string/str_contact"
+                android:textSize="@dimen/custom_preferences_category_title_font_size" />
+            <!-- Button: Web Page !-->
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/openWebButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingStart="@dimen/custom_preferences_button_padding"
+                android:paddingEnd="@dimen/custom_preferences_button_padding"
+                android:paddingTop="@dimen/custom_preferences_button_summary_padding_top_bottom"
+                android:paddingBottom="@dimen/custom_preferences_button_summary_padding_top_bottom"
+                android:background="?attr/selectableItemBackground"
+                android:layout_marginTop="@dimen/custom_preferences_button_first_margin_top"
+                android:layout_marginBottom="@dimen/custom_preferences_button_margin_bottom">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:fontFamily="sans-serif-medium"
+                        android:textSize="@dimen/custom_preferences_title_font_size"
+                        android:text="@string/str_open_dev_page" />
+                    <TextView
+                        android:id="@+id/devWebPageSummary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/custom_preferences_summary_font_size"
+                        android:text="SUMMARY_TEXT" />
+                </LinearLayout>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

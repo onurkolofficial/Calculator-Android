@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Hesap Makinesi</string>
+    <string name="str_settings">Ayarlar</string>
+    <string name="str_back">Geri</string>
+    <string name="str_menu">Menü</string>
+    <string name="str_history">Geçmiş</string>
+    <string name="str_currency_converter">Para Birimi Dönüştürücü</string>
+    <string name="str_del">Sil</string>
+    <string name="str_category_appearance">Görünüm</string>
+    <string name="str_category_other">Diğer</string>
+    <string name="str_ui_mode_title">Arayüz Modu</string>
+    <string name="str_ui_mode_summary">Gece veya gündüz modunu seçin.</string>
+    <string name="str_theme_title">Tema</string>
+    <string name="str_theme_summary">Uygulama görünümü için renk seçimi.</string>
+    <string name="str_language_title">Dil</string>
+    <string name="str_language_summary">Uygulama dilini seçin.</string>
+    <string name="str_about_title">Hakkında</string>
+    <string name="str_about_summary">Uygulama bilgilerine bakın.</string>
+    <string name="str_use_system">Sistem Ayarlarını Kullan</string>
+    <string name="str_ui_day">Gündüz Modu</string>
+    <string name="str_ui_night">Gece Modu</string>
+    <string name="str_lang_en">İngilizce</string>
+    <string name="str_lang_tr">Türkçe</string>
+    <string name="str_blue">Mavi</string>
+    <string name="str_purple">Mor</string>
+    <string name="str_pink">Pembe</string>
+    <string name="str_version">Sürüm</string>
+    <string name="str_contact">İletişim</string>
+    <string name="str_app_version">Uygulama Sürümü</string>
+    <string name="str_os_version">İşletim Sistemi Sürümü</string>
+    <string name="str_open_dev_page">Geliştirici Web Sayfasını Aç</string>
+    <string name="str_error">Hata</string>
+    <string name="str_no_history">Geçmiş Yok!</string>
+    <string name="str_no_history_summary">Henüz işlem yapılmadı.</string>
+    <string name="str_delete_all_history">Tüm Geçmişi Sil</string>
+    <string name="str_delete_all_history_question">Tüm geçmiş silinsin mi?</string>
+    <string name="str_yes">Evet</string>
+    <string name="str_no">Hayır</string>
+    <string name="str_exchangerate_api_notice">Bu uygulama \'exchangerate\' API\'sini kullanmaktadır.</string>
+    <string name="str_received_data">Veri alınıyor.</string>
+    <string name="str_update_downloaded">Güncelleme indirildi. Şimdi kur?</string>
+    <string name="str_install">Kur</string>
+</resources>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <!-- Button: Blue !-->
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/themeBlueButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingStart="@dimen/custom_preferences_button_padding"
+                android:paddingEnd="@dimen/custom_preferences_button_padding"
+                android:background="?attr/selectableItemBackground"
+                android:layout_marginTop="@dimen/custom_preferences_button_first_margin_top"
+                android:layout_marginBottom="@dimen/custom_preferences_button_margin_bottom">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:fontFamily="sans-serif"
+                        android:textSize="@dimen/custom_preferences_title_font_size"
+                        android:text="@string/str_blue" />
+                </LinearLayout>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/btn_blue_radius"
+                    android:gravity="start"
+                    android:padding="@dimen/custom_preferences_icon_padding"
+                    app:srcCompat="@drawable/empty_drawable" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+            <!-- Button: Purple !-->
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/themePurpleButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingStart="@dimen/custom_preferences_button_padding"
+                android:paddingEnd="@dimen/custom_preferences_button_padding"
+                android:background="?attr/selectableItemBackground"
+                android:layout_marginTop="@dimen/custom_preferences_button_margin_top"
+                android:layout_marginBottom="@dimen/custom_preferences_button_margin_bottom">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:fontFamily="sans-serif"
+                        android:textSize="@dimen/custom_preferences_title_font_size"
+                        android:text="@string/str_purple" />
+                </LinearLayout>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/btn_purple_radius"
+                    android:gravity="start"
+                    android:padding="@dimen/custom_preferences_icon_padding"
+                    app:srcCompat="@drawable/empty_drawable" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+            <!-- Button: Pink !-->
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/themePinkButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingStart="@dimen/custom_preferences_button_padding"
+                android:paddingEnd="@dimen/custom_preferences_button_padding"
+                android:background="?attr/selectableItemBackground"
+                android:layout_marginTop="@dimen/custom_preferences_button_margin_top"
+                android:layout_marginBottom="@dimen/custom_preferences_button_margin_bottom">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:fontFamily="sans-serif"
+                        android:textSize="@dimen/custom_preferences_title_font_size"
+                        android:text="@string/str_pink" />
+                </LinearLayout>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/btn_pink_radius"
+                    android:gravity="start"
+                    android:padding="@dimen/custom_preferences_icon_padding"
+                    app:srcCompat="@drawable/empty_drawable" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".activity.CurrencyConverterActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/app_background"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical">
+        <!-- Toolbar Settings !-->
+        <include
+            layout="@layout/toolbar_settings" />
+        <!-- Content !-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:textSize="@dimen/custom_preferences_summary_font_size"
+            android:text="@string/str_exchangerate_api_notice" />
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Startapp Banner !-->
+                <com.startapp.sdk.ads.banner.Banner
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/currencyContentCardView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    card_view:cardUseCompatPadding="false"
+                    card_view:cardCornerRadius="22dp"
+                    card_view:cardElevation="14dp">
+                    <!-- CardView Content !-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="4dp"
+                        android:paddingEnd="4dp"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:orientation="vertical">
+                        <!-- Currency - USD -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="10dp">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/white"
+                                android:textSize="20sp"
+                                android:text="USD" />
+                            <EditText
+                                android:id="@+id/currencyUSD"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/transparent"
+                                android:enabled="false"
+                                android:fontFamily="sans-serif-light"
+                                android:inputType="number|numberDecimal"
+                                android:minHeight="48dp"
+                                android:padding="10dp"
+                                android:singleLine="true"
+                                android:text="@string/str_received_data"
+                                android:textColor="@color/white"
+                                android:textAlignment="textEnd"
+                                android:textSize="24sp" />
+                        </LinearLayout>
+                        <!-- Currency - EUR -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="10dp">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/white"
+                                android:textSize="20sp"
+                                android:text="EUR" />
+                            <EditText
+                                android:id="@+id/currencyEUR"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/transparent"
+                                android:enabled="false"
+                                android:fontFamily="sans-serif-light"
+                                android:inputType="number|numberDecimal"
+                                android:minHeight="48dp"
+                                android:padding="10dp"
+                                android:singleLine="true"
+                                android:text="@string/str_received_data"
+                                android:textColor="@color/white"
+                                android:textAlignment="textEnd"
+                                android:textSize="24sp" />
+                        </LinearLayout>
+                        <!-- Currency - TRY -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="10dp">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/white"
+                                android:textSize="20sp"
+                                android:text="TRY" />
+                            <EditText
+                                android:id="@+id/currencyTRY"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/transparent"
+                                android:enabled="false"
+                                android:fontFamily="sans-serif-light"
+                                android:inputType="number|numberDecimal"
+                                android:minHeight="48dp"
+                                android:padding="10dp"
+                                android:singleLine="true"
+                                android:text="@string/str_received_data"
+                                android:textColor="@color/white"
+                                android:textAlignment="textEnd"
+                                android:textSize="24sp" />
+                        </LinearLayout>
+                        <!-- Currency - GBP -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="10dp">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/white"
+                                android:textSize="20sp"
+                                android:text="GBP" />
+                            <EditText
+                                android:id="@+id/currencyGBP"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/transparent"
+                                android:enabled="false"
+                                android:fontFamily="sans-serif-light"
+                                android:inputType="number|numberDecimal"
+                                android:minHeight="48dp"
+                                android:padding="10dp"
+                                android:singleLine="true"
+                                android:text="@string/str_received_data"
+                                android:textColor="@color/white"
+                                android:textAlignment="textEnd"
+                                android:textSize="24sp" />
+                        </LinearLayout>
+                        <!-- Currency - JPY -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="10dp">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/white"
+                                android:textSize="20sp"
+                                android:text="JPY" />
+                            <EditText
+                                android:id="@+id/currencyJPY"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/transparent"
+                                android:enabled="false"
+                                android:fontFamily="sans-serif-light"
+                                android:inputType="number|numberDecimal"
+                                android:minHeight="48dp"
+                                android:padding="10dp"
+                                android:singleLine="true"
+                                android:text="@string/str_received_data"
+                                android:textColor="@color/white"
+                                android:textAlignment="textEnd"
+                                android:textSize="24sp" />
+                        </LinearLayout>
+                        <!-- Currency - CNY -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="10dp">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/white"
+                                android:textSize="20sp"
+                                android:text="CNY" />
+                            <EditText
+                                android:id="@+id/currencyCNY"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/transparent"
+                                android:enabled="false"
+                                android:fontFamily="sans-serif-light"
+                                android:inputType="number|numberDecimal"
+                                android:minHeight="48dp"
+                                android:padding="10dp"
+                                android:singleLine="true"
+                                android:text="@string/str_received_data"
+                                android:textColor="@color/white"
+                                android:textAlignment="textEnd"
+                                android:textSize="24sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</LinearLayout>

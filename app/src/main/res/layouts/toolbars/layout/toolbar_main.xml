@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:contentInsetStart="0dp">
+    <!-- Toolbar Layout !-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal">
+        <!-- Menu Button !-->
+        <ImageButton
+            android:id="@+id/buttonDrawerMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:padding="20dp"
+            android:scaleType="center"
+            android:contentDescription="@string/str_menu"
+            app:tooltipText="@string/str_menu"
+            app:srcCompat="@drawable/baseline_menu_24"
+            app:tint="@color/btn_text_color"
+            tools:targetApi="o" />
+    </LinearLayout>
+</androidx.appcompat.widget.Toolbar>

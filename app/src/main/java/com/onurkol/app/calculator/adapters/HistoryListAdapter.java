@@ -3,6 +3,7 @@ package com.onurkol.app.calculator.adapters;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,8 +21,9 @@ import androidx.cardview.widget.CardView;
 import com.onurkol.app.calculator.R;
 import com.onurkol.app.calculator.activity.MainActivity;
 import com.onurkol.app.calculator.data.HistoryData;
-import com.onurkol.app.calculator.lib.calculator.history.HistoryManager;
-import com.onurkol.app.calculator.tools.CharLimiter;
+import com.onurkol.app.calculator.libs.app.HistoryManager;
+import com.onurkol.app.calculator.libs.modules.StringLimiter;
+import com.onurkol.app.calculator.libs.settings.ThemeManager;
 
 import java.util.List;
 
@@ -31,63 +33,64 @@ public class HistoryListAdapter extends ArrayAdapter<HistoryData> {
     private static List<HistoryData> historyData;
     private final ListView historyListView;
 
-    public HistoryListAdapter(Context context, ListView mHistoryListView, List<HistoryData> mHistoryData){
-        super(context,0,mHistoryData);
-        historyData=mHistoryData;
-        historyListView=mHistoryListView;
-        inflater=LayoutInflater.from(context);
+    ThemeManager themeManager;
+    HistoryManager historyManager;
+
+    public HistoryListAdapter(@NonNull Context context, ListView pHistoryListView, @NonNull List<HistoryData> pHistoryData) {
+        super(context, 0, pHistoryData);
+        historyData = pHistoryData;
+        historyListView = pHistoryListView;
+        inflater = LayoutInflater.from(context);
+        themeManager = ThemeManager.getInstance();
+        historyManager = HistoryManager.getManager(context);
     }
 
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        if (convertView==null) {
-            convertView=inflater.inflate(R.layout.item_history_list, null);
-            holder=new ViewHolder();
-            holder.expressionView=convertView.findViewById(R.id.procExpressText);
-            holder.valueView=convertView.findViewById(R.id.procValueText);
-            holder.deleteButton=convertView.findViewById(R.id.deleteHistoryButton);
-            holder.openHistoryData=convertView.findViewById(R.id.historyOpenButton);
+        if (convertView == null) {
+            convertView = inflater.inflate(R.layout.item_list_history, null);
+            holder = new ViewHolder();
+            holder.expressionText = convertView.findViewById(R.id.expressionText);
+            holder.valueText = convertView.findViewById(R.id.valueText);
+            holder.deleteHistoryButton = convertView.findViewById(R.id.deleteHistoryButton);
+            holder.openViewButton = convertView.findViewById(R.id.openViewButton);
             convertView.setTag(holder);
         }
         else{
             holder=(ViewHolder)convertView.getTag();
         }
 
-        // Get Data
-        final HistoryData hsData=historyData.get(position);
+        final HistoryData currentData = historyData.get(position);
 
-        // Get Classes
-        HistoryManager historyManager=HistoryManager.getManager();
-
-        // Character Limits
-        String Expression=CharLimiter.Limit(hsData.getProcessExpression(), 26);
-        String Value=CharLimiter.Limit(hsData.getProcessValue(),24);
+        String Expression = StringLimiter.Limit(currentData.getExpression(), 26);
+        String Value = StringLimiter.Limit(currentData.getValue(),24);
         // Write Data
-        holder.expressionView.setText(Expression);
-        holder.valueView.setText(Value);
+        holder.expressionText.setText(Expression);
+        holder.valueText.setText(Value);
 
-        // Button Click Events
-        // Delete Button
-        holder.deleteButton.setOnClickListener(view -> {
+        int themeColor=themeManager.getCurrentThemeColor(getContext());
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+            holder.openViewButton.setOutlineAmbientShadowColor(themeColor);
+            holder.openViewButton.setOutlineSpotShadowColor(themeColor);
+        }
+        themeManager.setBackgroundTint(getContext(), holder.openViewButton);
+
+        holder.deleteHistoryButton.setOnClickListener(view -> {
             // Get Root View
             View rView=view.getRootView();
-            // Delete Data
+
             historyManager.removeHistory(position);
-            // Remove List Item
-            //historyManager.getSavedHistoryData().remove(position);
-            // Refresh View
             historyListView.invalidateViews();
-            // Check No History Layout
-            if(historyManager.getSavedHistoryData().size()<=0) {
-                // Get Element
+
+            if(historyManager.getHistoryListFromJSON().size()==0) {
                 LinearLayout noHistoryLayout=rView.findViewById(R.id.noHistoryLayout);
-                // Show No History Layout
+                // Show 'No History' Layout
                 noHistoryLayout.setVisibility(View.VISIBLE);
             }
         });
-        // Open Button
-        holder.openHistoryData.setOnClickListener(view -> {
+
+        holder.openViewButton.setOnClickListener(view -> {
             // Get Current Context Activity
             Activity $this=(Activity)getContext();
             // Create Main Activity
@@ -95,30 +98,29 @@ public class HistoryListAdapter extends ArrayAdapter<HistoryData> {
             // Create new Bundle
             Bundle bundle = new Bundle();
             // Set bundle Data
-            bundle.putBoolean("LOAD_INTENT_DATA",true);
-            bundle.putString("HISTORY_EXPRESSION",hsData.getProcessExpression());
-            bundle.putString("HISTORY_VALUE",hsData.getProcessValue());
-            // Put Intent in MainActivity
+            bundle.putBoolean("LOAD_INTENT_DATA", true);
+            bundle.putString("HISTORY_EXPRESSION", currentData.getExpression());
+            bundle.putString("HISTORY_VALUE", currentData.getValue());
+
             mainActivity.putExtras(bundle);
 
-            // Check Exist MainActivity
-            if(!MainActivity.isCreate)
+            // for SHORTCUT Activity!
+            if(!MainActivity.isCreated)
                 // Start MainActivity
                 $this.startActivity(mainActivity);
             else
                 // Update MainActivity Intent
                 MainActivity.updatedIntent=mainActivity;
-            // Close Current Activity
+
             $this.finish();
         });
 
         return convertView;
     }
 
-    //View Holder
     private static class ViewHolder {
-        TextView expressionView,valueView;
-        ImageButton deleteButton;
-        CardView openHistoryData;
+        TextView expressionText, valueText;
+        ImageButton deleteHistoryButton;
+        CardView openViewButton;
     }
 }

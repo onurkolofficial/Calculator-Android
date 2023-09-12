@@ -1,82 +1,128 @@
 package com.onurkol.app.calculator.activity;
 
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.onurkol.app.calculator.R;
+import com.onurkol.app.calculator.adapters.CalculatorButtonsPagerAdapter;
 import com.onurkol.app.calculator.adapters.HistoryListAdapter;
-import com.onurkol.app.calculator.interfaces.AppDataSettings;
-import com.onurkol.app.calculator.lib.AppDataManager;
-import com.onurkol.app.calculator.lib.AppPreferenceManager;
-import com.onurkol.app.calculator.lib.ContextManager;
-import com.onurkol.app.calculator.lib.calculator.history.HistoryManager;
+import com.onurkol.app.calculator.interfaces.AppSettingsInterface;
+import com.onurkol.app.calculator.libs.AppPreferenceManager;
+import com.onurkol.app.calculator.libs.AppSettingsInitializeManager;
+import com.onurkol.app.calculator.libs.app.HistoryManager;
+import com.onurkol.app.calculator.libs.settings.LanguageManager;
+import com.onurkol.app.calculator.libs.settings.ThemeManager;
+import com.onurkol.app.calculator.libs.settings.UIModeManager;
 
-public class HistoryActivity extends AppCompatActivity implements AppDataSettings {
-    // Elements
-    ImageButton backButton;
-    TextView settingName;
-    ListView historyListView;
-    LinearLayout noHistoryLayout;
-    // Classes
-    AppPreferenceManager prefManager;
+public class HistoryActivity extends AppCompatActivity implements AppSettingsInterface {
+    ThemeManager themeManager;
+    AppPreferenceManager appPreferenceManager;
+    UIModeManager uiModeManager;
+    LanguageManager languageManager;
+
     HistoryManager historyManager;
-    // Adapter
-    HistoryListAdapter historyAdapter;
+
+    HistoryListAdapter historyListAdapter;
+
+    ImageButton settingsBackButton;
+    TextView settingsTitle;
+    LinearLayout noHistoryLayout;
+    ListView historyListView;
+    Button deleteAllHistory;
+
+    public static boolean isConfigChanged = false,
+            isLanguageChanged = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        // Set Current Activity Context
-        ContextManager.Build(this);
-        // Load App Data
-        AppDataManager.loadApplicationData();
-        // Create
+        AppSettingsInitializeManager.onStart(this);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history);
-        // Get Classes
-        prefManager=AppPreferenceManager.getInstance();
-        historyManager=HistoryManager.getManager();
-        // Get Elements
-        backButton=findViewById(R.id.backButton);
-        settingName=findViewById(R.id.settingName);
-        historyListView=findViewById(R.id.historyListView);
-        noHistoryLayout=findViewById(R.id.noHistoryLayout);
-        // Set Toolbar Title
-        settingName.setText(getString(R.string.history_text));
 
-        // Button Click Events
-        backButton.setOnClickListener(view -> {
-            // Close Activity
-            finish();
+        themeManager = ThemeManager.getInstance();
+        appPreferenceManager = AppPreferenceManager.getInstance(this);
+        uiModeManager = UIModeManager.getInstance();
+        languageManager = LanguageManager.getInstance();
+
+        historyManager = HistoryManager.getManager(this);
+
+        settingsBackButton = findViewById(R.id.settingsBackButton);
+        settingsTitle = findViewById(R.id.settingsTitle);
+        noHistoryLayout = findViewById(R.id.noHistoryLayout);
+        historyListView = findViewById(R.id.historyListView);
+        deleteAllHistory = findViewById(R.id.deleteAllHistory);
+
+        settingsTitle.setText(getString(R.string.str_history));
+
+        startAppTheme();
+
+        settingsBackButton.setOnClickListener(view -> finish());
+
+        deleteAllHistory.setOnClickListener(view -> {
+            // Dialog
+            AlertDialog.Builder builder = new AlertDialog.Builder(HistoryActivity.this);
+            builder.setMessage(getString(R.string.str_delete_all_history_question))
+                    .setIcon(android.R.drawable.ic_dialog_alert)
+                    .setPositiveButton(getString(R.string.str_yes),(dialog, which) -> {
+                        historyManager.deleteAllHistory();
+                        historyListView.invalidateViews();
+                        checkHistoryListOrNoView();
+                    })
+                    .setNegativeButton(getString(R.string.str_no), null)
+                    .show();
         });
 
-        // Set List Adapter & Data
-        historyAdapter=new HistoryListAdapter(this,historyListView,HISTORY_DATA_LIST);
-        historyListView.setAdapter(historyAdapter);
-        // Get Preference Data
-        getPreferenceDataToList();
+        historyListAdapter = new HistoryListAdapter(this,historyListView,HISTORY_DATA_LIST);
+        historyListView.setAdapter(historyListAdapter);
+
+        checkHistoryListOrNoView();
     }
 
-    private void getPreferenceDataToList(){
+    private void startAppTheme(){
+        themeManager.setBackgroundTint(this, settingsBackButton);
+        themeManager.setTextColor(this, settingsTitle);
+    }
+
+    private void checkHistoryListOrNoView(){
         // Get Preference
-        String histories=prefManager.getString(KEY_CALCULATOR_HISTORY);
+        String histories=appPreferenceManager.getString(_APP_KEY_CALCULATOR_HISTORY);
 
         if(histories==null || histories.equals("")){
-            // Show No History Layout
+            // Show 'No History' Layout
             noHistoryLayout.setVisibility(View.VISIBLE);
             // Clear List
             HISTORY_DATA_LIST.clear();
         }
         else{
-            // Show No History Layout
+            // Hide 'No History' Layout
             noHistoryLayout.setVisibility(View.GONE);
             // Update Data
-            historyManager.syncSavedHistoryData();
+            historyManager.syncHistoryData();
         }
+    }
+
+    @Override
+    protected void onResume() {
+        if(isConfigChanged){
+            startAppTheme();
+            uiModeManager.setAppUIMode(appPreferenceManager.getInt(_APP_KEY_UI_MODE));
+        }
+        if(isLanguageChanged){
+            languageManager.setAppLanguage(this, appPreferenceManager.getInt(_APP_KEY_LANGUAGE));
+            recreate();
+        }
+
+        isLanguageChanged = false;
+        isConfigChanged = false;
+        super.onResume();
     }
 }

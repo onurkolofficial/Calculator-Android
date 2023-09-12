@@ -1,23 +1,23 @@
 package com.onurkol.app.calculator.data;
 
 public class HistoryData {
-    private String processExpression,processValue;
+    String calcExpression, calcValue;
 
     public HistoryData(String Expression, String Value){
-        processExpression=Expression;
-        processValue=Value;
+        calcExpression=Expression;
+        calcValue=Value;
     }
 
-    public void setProcessExpression(String newProcessExpression){
-        processExpression=newProcessExpression;
+    public void setExpression(String newProcessExpression){
+        calcExpression=newProcessExpression;
     }
-    public String getProcessExpression(){
-        return processExpression;
+    public String getExpression(){
+        return calcExpression;
     }
-    public void setProcessValue(String newProcessValue){
-        processValue=newProcessValue;
+    public void setValue(String newProcessValue){
+        calcValue=newProcessValue;
     }
-    public String getProcessValue(){
-        return processValue;
+    public String getValue(){
+        return calcValue;
     }
 }

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <!-- Category:Appearance !-->
+            <TextView
+                android:id="@+id/appearanceTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="sans-serif"
+                android:layout_marginTop="@dimen/custom_preferences_category_margin_top"
+                android:layout_marginBottom="@dimen/custom_preferences_category_margin_bottom"
+                android:layout_marginStart="@dimen/custom_preferences_category_margin_start"
+                android:layout_marginEnd="@dimen/custom_preferences_category_margin_end"
+                android:text="@string/str_category_appearance"
+                android:textSize="@dimen/custom_preferences_category_title_font_size" />
+            <!-- Button: UIMode !-->
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/uiModeButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="?attr/selectableItemBackground"
+                android:layout_marginTop="@dimen/custom_preferences_button_first_margin_top"
+                android:layout_marginBottom="@dimen/custom_preferences_button_margin_bottom">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:padding="@dimen/custom_preferences_icon_padding"
+                    android:gravity="start"
+                    app:srcCompat="@drawable/baseline_mode_night_24" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:fontFamily="sans-serif-medium"
+                        android:textSize="@dimen/custom_preferences_title_font_size"
+                        android:text="@string/str_ui_mode_title" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/custom_preferences_summary_font_size"
+                        android:text="@string/str_ui_mode_summary" />
+                </LinearLayout>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+            <!-- Button: Theme !-->
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/themeButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="?attr/selectableItemBackground"
+                android:layout_marginTop="@dimen/custom_preferences_button_margin_top"
+                android:layout_marginBottom="@dimen/custom_preferences_button_margin_bottom">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:padding="@dimen/custom_preferences_icon_padding"
+                    android:gravity="start"
+                    app:srcCompat="@drawable/baseline_colorize_24" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:fontFamily="sans-serif-medium"
+                        android:textSize="@dimen/custom_preferences_title_font_size"
+                        android:text="@string/str_theme_title" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/custom_preferences_summary_font_size"
+                        android:text="@string/str_theme_summary" />
+                </LinearLayout>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+            <!-- Button: Language !-->
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/languageButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="?attr/selectableItemBackground"
+                android:layout_marginTop="@dimen/custom_preferences_button_margin_top"
+                android:layout_marginBottom="@dimen/custom_preferences_button_margin_bottom">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:padding="@dimen/custom_preferences_icon_padding"
+                    android:gravity="start"
+                    app:srcCompat="@drawable/baseline_translate_24" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:fontFamily="sans-serif-medium"
+                        android:textSize="@dimen/custom_preferences_title_font_size"
+                        android:text="@string/str_language_title" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/custom_preferences_summary_font_size"
+                        android:text="@string/str_language_summary" />
+                </LinearLayout>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <!-- Category:Other !-->
+            <TextView
+                android:id="@+id/otherTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="sans-serif"
+                android:layout_marginTop="@dimen/custom_preferences_category_margin_top"
+                android:layout_marginBottom="@dimen/custom_preferences_category_margin_bottom"
+                android:layout_marginStart="@dimen/custom_preferences_category_margin_start"
+                android:layout_marginEnd="@dimen/custom_preferences_category_margin_end"
+                android:text="@string/str_category_other"
+                android:textSize="@dimen/custom_preferences_category_title_font_size" />
+            <!-- Button: About !-->
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/aboutButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="?attr/selectableItemBackground"
+                android:layout_marginTop="@dimen/custom_preferences_button_first_margin_top"
+                android:layout_marginBottom="@dimen/custom_preferences_button_margin_bottom">>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:padding="@dimen/custom_preferences_icon_padding"
+                    android:gravity="start"
+                    app:srcCompat="@drawable/outline_info_24" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:fontFamily="sans-serif-medium"
+                        android:textSize="@dimen/custom_preferences_title_font_size"
+                        android:text="@string/str_about_title" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/custom_preferences_summary_font_size"
+                        android:text="@string/str_about_summary" />
+                </LinearLayout>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
