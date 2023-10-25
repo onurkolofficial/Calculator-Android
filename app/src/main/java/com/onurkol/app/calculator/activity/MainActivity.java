@@ -141,6 +141,7 @@ public class MainActivity extends AppCompatActivity implements AppSettingsInterf
         calcShowPrevious.setOnClickListener(view -> {
             calcShowValue.setText(calcShowPrevious.getText());
             calcShowValue.setSelection(calcShowValue.getText().length());
+            calcShowPrevious.setText("");
         });
 
         // StartApp Ads SDK

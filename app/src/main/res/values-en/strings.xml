@@ -41,4 +41,5 @@
     <string name="str_received_data">Data is being received.</string>
     <string name="str_update_downloaded">The update has been downloaded. Install now?</string>
     <string name="str_install">İnstall</string>
+    <string name="str_grey">Grey</string>
 </resources>

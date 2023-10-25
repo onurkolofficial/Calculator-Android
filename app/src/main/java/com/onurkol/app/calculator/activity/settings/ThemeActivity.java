@@ -20,7 +20,7 @@ public class ThemeActivity extends AppCompatActivity implements AppSettingsInter
 
     ImageButton settingsBackButton;
     TextView settingsTitle;
-    LinearLayoutCompat themeBlueButton, themePurpleButton, themePinkButton;
+    LinearLayoutCompat themeGreyButton, themeBlueButton, themePurpleButton, themePinkButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +34,7 @@ public class ThemeActivity extends AppCompatActivity implements AppSettingsInter
 
         settingsBackButton = findViewById(R.id.settingsBackButton);
         settingsTitle = findViewById(R.id.settingsTitle);
+        themeGreyButton = findViewById(R.id.themeGreyButton);
         themeBlueButton = findViewById(R.id.themeBlueButton);
         themePurpleButton = findViewById(R.id.themePurpleButton);
         themePinkButton = findViewById(R.id.themePinkButton);
@@ -43,25 +44,17 @@ public class ThemeActivity extends AppCompatActivity implements AppSettingsInter
         startAppTheme();
 
         settingsBackButton.setOnClickListener(view -> finish());
-        themeBlueButton.setOnClickListener(view -> {
-            appPreferenceManager.setPreference(_APP_KEY_THEME, _THEME_COLOR_BLUE);
-            SettingsActivity.isConfigChanged = true;
+        themeGreyButton.setOnClickListener(view -> colorButtonEvent(_THEME_COLOR_GREY));
+        themeBlueButton.setOnClickListener(view -> colorButtonEvent(_THEME_COLOR_BLUE));
+        themePurpleButton.setOnClickListener(view -> colorButtonEvent(_THEME_COLOR_PURPLE));
+        themePinkButton.setOnClickListener(view -> colorButtonEvent(_THEME_COLOR_PINK));
+    }
 
-            startAppTheme();
-        });
-        themePurpleButton.setOnClickListener(view -> {
-            appPreferenceManager.setPreference(_APP_KEY_THEME, _THEME_COLOR_PURPLE);
-            SettingsActivity.isConfigChanged = true;
+    private void colorButtonEvent(int _THEME_COLOR_ID){
+        appPreferenceManager.setPreference(_APP_KEY_THEME, _THEME_COLOR_ID);
+        SettingsActivity.isConfigChanged = true;
 
-            startAppTheme();
-        });
-        themePinkButton.setOnClickListener(view -> {
-            appPreferenceManager.setPreference(_APP_KEY_THEME, _THEME_COLOR_PINK);
-            SettingsActivity.isConfigChanged = true;
-
-            startAppTheme();
-        });
-
+        startAppTheme();
     }
 
     private void startAppTheme(){

@@ -80,7 +80,7 @@ public class CurrencyConverterActivity extends AppCompatActivity implements AppS
             new Thread(() -> {
                 try {
                     // URL List
-                    String URL_MAIN="https://api.exchangerate.host/latest?format=xml&symbols=USD,EUR,TRY,GBP,JPY,CNY&places=2";
+                    String URL_MAIN="https://api.exchangerate.host/live?access_key=a9dd6b070c9690ac234fb4f9175a1fc9&format=xml&symbols=USD,EUR,TRY,GBP,JPY,CNY&places=2";
                     URL urlBasedUSD = new URL(URL_MAIN+"&base=USD");
                     URL urlBasedEUR = new URL(URL_MAIN+"&base=EUR");
                     URL urlBasedTRY = new URL(URL_MAIN+"&base=TRY");

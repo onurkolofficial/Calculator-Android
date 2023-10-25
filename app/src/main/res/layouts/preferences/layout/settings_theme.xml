@@ -12,6 +12,38 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+            <!-- Button: Grey !-->
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/themeGreyButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingStart="@dimen/custom_preferences_button_padding"
+                android:paddingEnd="@dimen/custom_preferences_button_padding"
+                android:background="?attr/selectableItemBackground"
+                android:layout_marginTop="@dimen/custom_preferences_button_first_margin_top"
+                android:layout_marginBottom="@dimen/custom_preferences_button_margin_bottom">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:fontFamily="sans-serif"
+                        android:textSize="@dimen/custom_preferences_title_font_size"
+                        android:text="@string/str_grey" />
+                </LinearLayout>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/btn_grey_radius"
+                    android:gravity="start"
+                    android:padding="@dimen/custom_preferences_icon_padding"
+                    app:srcCompat="@drawable/empty_drawable" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
             <!-- Button: Blue !-->
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:id="@+id/themeBlueButton"

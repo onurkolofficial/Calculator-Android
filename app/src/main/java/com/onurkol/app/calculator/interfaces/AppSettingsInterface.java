@@ -19,9 +19,10 @@ public interface AppSettingsInterface {
             _UI_MODE_NIGHT = 10002;
 
     // Theme Colors
-    int _THEME_COLOR_BLUE = 11001,
-            _THEME_COLOR_PURPLE = 11002,
-            _THEME_COLOR_PINK = 11003;
+    int _THEME_COLOR_GREY = 11000,
+            _THEME_COLOR_BLUE = 11001,
+            _THEME_COLOR_PURPLE = 11003,
+            _THEME_COLOR_PINK = 11004;
 
     // Languages
     int _LANGUAGE_SYSTEM = 12000,

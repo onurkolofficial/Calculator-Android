@@ -27,6 +27,7 @@ public class ThemeManager implements AppSettingsInterface {
     }
 
     private void applyThemeUI(Context context, View object, int Mode){
+        ColorStateList colorGrey = context.getColorStateList(R.color.btn_grey);
         ColorStateList colorBlue = context.getColorStateList(R.color.btn_blue);
         ColorStateList colorPurple = context.getColorStateList(R.color.btn_purple);
         ColorStateList colorPink = context.getColorStateList(R.color.btn_pink);
@@ -34,7 +35,9 @@ public class ThemeManager implements AppSettingsInterface {
         int theme = getTheme(context);
 
         if(Mode == _MODE_BACKGROUND_TINT){
-            if(theme == _THEME_COLOR_BLUE)
+            if(theme == _THEME_COLOR_GREY)
+                object.setBackgroundTintList(colorGrey);
+            else if(theme == _THEME_COLOR_BLUE)
                 object.setBackgroundTintList(colorBlue);
             else if(theme == _THEME_COLOR_PURPLE)
                 object.setBackgroundTintList(colorPurple);
@@ -42,7 +45,9 @@ public class ThemeManager implements AppSettingsInterface {
                 object.setBackgroundTintList(colorPink);
         }
         else if(Mode == _MODE_ICON_TINT){
-            if(theme == _THEME_COLOR_BLUE)
+            if(theme == _THEME_COLOR_GREY)
+                ((ImageView)object).setColorFilter(colorGrey.getDefaultColor());
+            else if(theme == _THEME_COLOR_BLUE)
                 ((ImageView)object).setColorFilter(colorBlue.getDefaultColor());
             else if(theme == _THEME_COLOR_PURPLE)
                 ((ImageView)object).setColorFilter(colorPurple.getDefaultColor());
@@ -50,7 +55,9 @@ public class ThemeManager implements AppSettingsInterface {
                 ((ImageView)object).setColorFilter(colorPink.getDefaultColor());
         }
         else if(Mode == _MODE_TEXT_COLOR){
-            if(theme == _THEME_COLOR_BLUE)
+            if(theme == _THEME_COLOR_GREY)
+                ((TextView)object).setTextColor(colorGrey);
+            else if(theme == _THEME_COLOR_BLUE)
                 ((TextView)object).setTextColor(colorBlue);
             else if(theme == _THEME_COLOR_PURPLE)
                 ((TextView)object).setTextColor(colorPurple);
@@ -80,7 +87,9 @@ public class ThemeManager implements AppSettingsInterface {
         int theme = getTheme(context);
         int color = 0;
 
-        if(theme == _THEME_COLOR_BLUE)
+        if(theme == _THEME_COLOR_GREY)
+            color=ContextCompat.getColor(context, R.color.btn_grey);
+        else if(theme == _THEME_COLOR_BLUE)
             color=ContextCompat.getColor(context, R.color.btn_blue);
         else if(theme == _THEME_COLOR_PURPLE)
             color=ContextCompat.getColor(context, R.color.btn_purple);

@@ -7,6 +7,7 @@
     <color name="btn_pink">#EE5089</color>
     <color name="btn_pink_dark">#D01B5D</color>
     <color name="btn_purple">#BC50EE</color>
+    <color name="btn_grey">#535353</color>
     <!-- Palette: BGW !-->
     <color name="black1">#FF050505</color>
     <color name="black2">#FF0A0A0A</color>
